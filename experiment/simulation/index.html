@@ -1,13 +1,401 @@
+<!-- Home page of simulator -->
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-	<!-- Add CSS at the head of HTML file -->
-    <link rel="stylesheet" href="./css/main.css">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link rel="stylesheet" href="css/main.css"> -->
+    <link rel="stylesheet" href="css/style.css">
+    <script src='https://cdn.plot.ly/plotly-2.12.1.min.js'></script>
+    <title>Virtual Lab</title>
 </head>
 <body>
-		<!-- Your code goes here-->
+    <!-- simulation -->
+    <div class="simulation" id="simulation">
+        <div class="topic">
+            <h2>Zeeman-Effect : Determination of carrier concentration</h2>
+        </div>
+        <div id="content">
+            <div class="subtopics">
+                <h4>Objective:</h4>
+                <p>To observe Zeeman effect and to calculate Bohr magneton.</p>
+                <h4>Apparatus Used:</h4>
+                <p>Optical rail, Electromagnet, Mercury discharge tube, Polarizer, Fabry Perot etalon, Telescope with focusing lens, CCD Camera, Constant current supply, digital Gauss meter, Zeeman effect power supply, TV monitor, Micrometer.
+                </p>
+            </div>
+            <div class="grid-container">
+                <div class="grid-item">
+                    <p>Constant Power Supply</p><img class='img1' src="images/ammeter.png" alt="constantpowersupply">
+                </div>
+                <div class="grid-item">
+                    <p>Zeeman effect power supply</p><img class='img2' src="images/zemanpwrsply.png" alt="zeemanpowersupply">
+                </div>
+                <div class="grid-item">
+                    <p>Digital Gauss Meter</p><img class='img3' src="images/gauss.png" alt="gauss">
+                </div>
+                <div class="grid-item">
+                    <p>Zeeman setup</p><img class='img4' src="images/zeemanset.png" alt="gauss">
+                </div>
+                <div class="grid-item">
+                    <p>Hall Probe</p><img class='img5' src="images/probe1.png" alt="hallsensor">
+                </div>
+                <div class="grid-item">
+                    <p>Mercury Discharge Tube</p><img class='img6' src="images/mercurytube.png" alt="hallsensor">
+                </div>
+            </div>
+        </div>
 
-	<!-- Add JS at the bottom of HTML file --> 
-        <script src="./js/main.js"></script>
+        <!-- content2 -->
+        <div style="display: none;" id="content2">
+            <div class="blocker" onclick="closeobservation()" id="blocker"></div>
+
+            <div class="simoptions" id="simoptions">
+                <div class="procedure">
+                    <label style="text-align:left;">Choose the procedure :</label><br>
+                    <select name="exp" id="exp" onChange="update()">
+                        <option value="Empty" hidden>Select the Procedure</option>
+                        <option value="mfield vs current">Magnetic Field vs Current</option>
+                        <option value="Zeeman Effect">Zeeman Effect</option>
+                    </select>
+                </div>
+                <div class="insert-reset-observation">
+                    <button id="insert" type="button" onclick="insert()" disabled>Insert Probe</button>
+                    <button id="remove" type="button" onclick="remove()" style="display:none;font-size: 12px;">Remove
+                        Probe</button>
+                </div>
+                <div class="current" id = "current">
+                    <p>Current: <span id="currentvalue"></span> A</p>
+                    <input type="range" min="1" max="4" value="1" step="0.5" class="slider" id="cslider" disabled>
+                </div>
+                <div id="leastcount" style="display: none; font-size: 16px; margin: 12px;">Least Count = 0.01mm</div>
+                <div id="addbtn" class="insert-reset-observation" style="display: none; margin-left: 40px;">
+                    <button id="addbutton" type="button" onclick="AddingToArray()" disabled>Add to Table</button>
+                </div>
+                <div id="mmrdng" class="insert-reset-observation" style="display: none; margin-left: 40px; margin-top: 20px;">
+                    <button id="mmreading" type="button" disabled>Take Reading</button>
+                </div>
+                <div id="magfield" class="insert-reset-observation" style="display: none; margin-left: 40px;">
+                    <button id="magneticfield" type="button" disabled>Magnetic Field</button>
+                </div>
+                <div class="insert-reset-observation">
+                    <button id="observationbutton" type="button" onclick="openobservation()"
+                        disabled>Observations</button>
+                </div>
+                <div class="insert-reset-observation">
+                    <button id="finalresult" type="button" onclick="hallcovalue()" disabled>Show Result</button>
+                </div>
+                <div class="result">
+                    <br>
+                    <label>Bohr Magneton : </label><br>
+                    <span id="calculatedvalue" style="display: none; font-size: 15px;">&mu;<sub>b</sub>= 0.973 &times;10<sup>-23</sup> amp-m<sup>2</sup></span><br>
+                    <label>Standard Value : </label><br>
+                    <span id="originalvalue" style="display: none; font-size: 15px;">&mu;<sub>b</sub>= 0.927 &times;10<sup>-23</sup> amp-m<sup>2</sup></span><br>
+                    <span id="error" style="display: none; font-size: 15px;">Error = 5%</span>
+                </div>
+                <div class="insert-reset-observation">
+                    <button id="reset" type="reset" onclick="Refresh()">Reset</button>
+                </div>
+                <div class="help">
+                    <button type="button" onclick="help()"><img src="images/help.png" alt="helpicon"></button>
+                </div>
+            </div>
+
+            <!-- simulation -->
+            <div class="mainsimulation" id="mainsimulation">
+                <p id="add">Added Successfully!</p>
+                <img id="circuit1" src="images/circuit1.1.png" alt="circuit1" style="display:none; position: absolute; width: 600px; height: 426px; top: 55px; left: 0px;">
+                <img id="circuit2" src="images/circuit2.png" alt="circuit2" style="display:none; position: absolute; width: 600px; height: 426px;top: 55px; left: 0px;">
+                <img id="stand" src="images/stand.png" alt="stand" style="display:none; position: absolute; height: 200px; width: 475px; top: 222px; left: 5px;">
+                <img id="zmnpwrsuply" src="images/zemanpwrsply.png" alt="zeemanpowersupply" style="display:none; position: absolute; height: 75px; width: 105px; left: 496px; top: 461px;">
+                <img id="crntpwrsuply" src="images/constpwrsply.png" alt="constantpowersupply" style="display:none; position: absolute; height: 90px; width: 100px; left: 501px; top: 397px;">
+                <img id="ccdcamera" src="images/ccdcamera.png" alt="ccdcamera" style="display:none; position: absolute; height: 136px; width: 64px; left: 58px; top: 235px;">
+                <img id="telescope" src="images/telescope1.png" alt="telescope" style="display:none; position: absolute; height: 133px; width: 78px; left: 105px; top: 239px;">
+                <img id="polariser" src="images/polariser.png" alt="polariser" style="display:none; position: absolute; height: 130px; width: 40px; left: 296px; top: 240px;">
+                <img id="etalon" src="images/etalon.png" alt="etalon" style="display:none; position: absolute; height: 130px; width: 70px; left: 195px; top: 241px;">
+                <img id="mercurytube" src="images/mercurytube1.png" alt="mercurytube" style="display:none; position: absolute; height: 107px; width: 121px; left: 439px; top: 439px;">
+                <img id="elemagnet" src="images/electromagnet.png" alt="electromagnet" style="display:none; position: absolute; height: 145px; width: 260px; left: 180px; top: 200px;">
+                <img id="mertube" src="images/mercurytube.png" alt="mercurytube" style="display:none; position: absolute; height: 115px; width: 121px; left: 303px; top: 100px;">
+                <img id="circle1" src="images/circle1.png" alt="rings" style="display:none; position: absolute; height: 186px; width: 293px; left: 4px; top: 7px;">
+                <img id="circle2" src="images/circle2.png" alt="splitrings" style="display:none; position: absolute; height: 185px; width: 245px; left: 50px; top: 8px;">
+                <img id="monitor" src="images/screen.png" alt="monitor" style="display:none; position: absolute; height: 185px; width: 250px; left: 5px; top: 10px;">
+                <img id="probe" src="images/probe.png" alt="probe" style="display:none; position: absolute; height: 132px; width: 22px; left: 327px; top: 200px;">
+                <img id="wire" src="images/wire.png" alt="wire" style="display:none; position: absolute; height: 152px; width: 189px; left: 237px; top: 300px;">
+                <img id="connection" src="images/connection.png" alt="connectionwire" style="display: none; position: absolute; height: 155px; width: 72px; top: 312px; left: 456px;"/>
+                <span id="voltagevalue" style="display:none ;"></span>
+                <span id="fieldvalue" style="display:none; position: absolute; top: 27px; left: 0px;"></span>
+                <span id="cvalue" style="display:none; position: absolute; top: 25px; left: 0px;"></span>
+                <img id="hand1" class="hands" src="images/hand.png" alt="hand" style="display:none; position: absolute; height: 75px; width: 65px; left: 74px; top: 330px;">
+                <img id="hand" class="hands" src="images/hand.png" alt="hand" style="display:none; position: absolute; height: 70px; width: 60px; left: 518px; top: 442px;">
+                <div id="paper"></div>
+                <div id="paper2"></div>
+                <img id="reading1" src="images/reading1.png" alt="reading1" style="display:none; position: absolute; height: 95px; width: 150px; left: 415px; top: 100px;">
+                <img id="reading2" src="images/reading2.png" alt="reading2" style="display:none; position: absolute; height: 95px; width: 150px; left: 415px; top: 100px;">
+                <img id="reading3" src="images/reading3.png" alt="reading3" style="display:none; position: absolute; height: 95px; width: 150px; left: 415px; top: 100px;">
+                <img id="reading4" src="images/reading4.png" alt="reading4" style="display:none; position: absolute; height: 95px; width: 150px; left: 415px; top: 100px;">
+                <img id="reading5" src="images/reading5.png" alt="reading5" style="display:none; position: absolute; height: 95px; width: 150px; left: 415px; top: 100px;">
+                <img id="reading6" src="images/reading6.png" alt="reading6" style="display:none; position: absolute; height: 95px; width: 150px; left: 415px; top: 100px;">
+                <img id="reading7" src="images/reading7.png" alt="reading7" style="display:none; position: absolute; height: 95px; width: 150px; left: 415px; top: 100px;">
+                <img id="reading8" src="images/reading8.png" alt="reading8" style="display:none; position: absolute; height: 95px; width: 150px; left: 415px; top: 100px;">
+                <img id="reading9" src="images/reading9.png" alt="reading9" style="display:none; position: absolute; height: 95px; width: 150px; left: 415px; top: 100px;">
+                <img id="reading10" src="images/reading10.png" alt="reading10" style="display:none; position: absolute; height: 95px; width: 150px; left: 415px; top: 100px;">
+                <img id="reading11" src="images/reading11.png" alt="reading11" style="display:none; position: absolute; height: 95px; width: 150px; left: 415px; top: 100px;">
+                <img id="reading12" src="images/reading12.png" alt="reading12" style="display:none; position: absolute; height: 95px; width: 150px; left: 415px; top: 100px;">
+                <img id="reading13" src="images/reading13.png" alt="reading13" style="display:none; position: absolute; height: 95px; width: 150px; left: 415px; top: 100px;">
+                <p id="readingi" class="reading">R<sub>i</sub> = <span id="ireading" style="margin-top: -21px; margin-left: 65px;"></span></p>
+                <p id="readings" class="reading">R<sub>s</sub> = <span id="sreading" style="margin-top: -21px; margin-left: 65px;"></span></p>
+                <span id="note" style="position: absolute; padding: 10px; border: 1px solid black; background-color: black; border-radius: 5px; left: 115px; top: 160px; width: 300px; display: none;">
+                <p id="text" style="color: white; font-size: 15px; padding: 5px; margin-top: 0px;">
+                Note:- Give the maximum magnetic field.</p>
+                <input type="button" style="cursor: pointer; border-radius: 5px; margin: auto;" id="ok" value="OK" onclick="note()" /></span>
+            </div>
+            <div id="instructions">
+                <div class="icontent">
+                    <h4>Instructions</h4>
+                    <ol>
+                        <li>Select the "Magnetic Field vs Current" procedure from 'Select Procedure' dropdown menu.</li>
+                        <li>Click on the 'Insert Hall probe' button to insert the probe into the electromagnet.The distance between electromagnet should be 1 cm.</li>
+                        <li>Click on the 'Add to Table' button to add current and magnetic field values to the table.</li>
+                        <li>Click on the 'Observation' button to view the table.</li>
+                        <li>Click on the 'plot graph' button to view the graph.</li>
+                        <li>Change the procedure to "Zeeman Effect" to calculate the Bohr magneton.</li>
+                        <li>Click on the 'Insert Probe' button to insert the mercury discharge tube into the electromagnet.</li>
+                        <li>Place the optical rail near the electromagnet. Place the converging lens, polariser, Fabrey Perot etalon (fix the thickness of air gap of etalon t= 4mm),telescope with focussing lens, and CCD camera on the rail.</li>
+                        <li>Connect the CCD camera to the Monitor and observe the concentric circular rings.</li>
+                        <li>Apply the maximum magnetic field and observe the splitting of spectral lines.</li>
+                        <li>Set the centre of the specified line at the cross section as marked on the display.</li>
+                        <li>Bring the inner most splitting of the first spectrum line at the cross section and
+                            note down the micrometre reading. This position is Ri</li>
+                        <li>Now move the micrometre to adjust the second spectral splitting of the first line
+                            at the cross wire and note its reading</li>
+                        <li>Similarly take readings of splitting in different spectral lines. (For example,
+                            Complete the observation table as given below)</li>
+                        <li>After getting the values of ,Calculate Bohr magneton using the relation.
+                            Where, h ⟹ Plank’s constant,
+                            B⟹ Magnetic field,
+                            c⟹ velocity of light,
+                            t⟹ thickness of air gap for etalon =4mm.
+                        </li>
+                    </ol>
+                </div>
+                    <button type="button" onclick="closeobservation()">Close</button>
+            </div>
+            <div id="IBgraph">
+                <div id="myChart"></div>
+                <button onclick="closeobservation()">Close</button>
+            </div>
+            <div class="observations" id="observation">
+                <div class="tablesdiv" id="tablediv">
+                    <table class="observationTable" id="observationTable">
+                        <tr>
+                            <th>No. of spectral lines</th>
+                            <th>splitting of spectral lines</th>
+                            <th>split position R<sub>s</sub></th>
+                            <th>Actual Radians R = R<sub>s</sub> - R<sub>i</sub></th>
+                            <th>R<sup>2</sup>  (mm)<sup>2</sup></th>
+                        </tr>
+                        <tr>
+                            <td rowspan="3">1</td>
+                            <td>a</td>
+                            <td>3.18</td>
+                            <td>1.11</td>
+                            <td>1.232</td>
+                        </tr>
+                        <tr>
+                            <td>b</td>
+                            <td>3.44</td>
+                            <td>1.37</td>
+                            <td>1.877</td>
+                        </tr>
+                        <tr>
+                            <td>c</td>
+                            <td>3.67</td>
+                            <td>1.60</td>
+                            <td>2.561</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="3">2</td>
+                            <td>a</td>
+                            <td>4.15</td>
+                            <td>2.08</td>
+                            <td>4.326</td>
+                        </tr>
+                        <tr>
+                            <td>b</td>
+                            <td>4.31</td>
+                            <td>2.24</td>
+                            <td>5.018</td>
+                        </tr>
+                        <tr>
+                            <td>c</td>
+                            <td>4.40</td>
+                            <td>2.33</td>
+                            <td>5.429</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="3">3</td>
+                            <td>a</td>
+                            <td>4.74</td>
+                            <td>2.67</td>
+                            <td>7.136</td>
+                        </tr>
+                        <tr>
+                            <td>b</td>
+                            <td>4.89</td>
+                            <td>2.82</td>
+                            <td>7.952</td>
+                        </tr>
+                        <tr>
+                            <td>c</td>
+                            <td>4.99</td>
+                            <td>2.92</td>
+                            <td>8.526</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="3">4</td>
+                            <td>a</td>
+                            <td>5.30</td>
+                            <td>3.23</td>
+                            <td>10.433</td>
+                        </tr>
+                        <tr>
+                            <td>b</td>
+                            <td>5.39</td>
+                            <td>3.32</td>
+                            <td>11.023</td>
+                        </tr>
+                        <tr>
+                            <td>c</td>
+                            <td>5.45</td>
+                            <td>3.38</td>
+                            <td>11.425</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="tableObservations" id="tableObservation">
+                    <button type="button" onclick="closeobservation()">Close</button>
+                    <button type="button" onclick="table2()" style="width: 100px;">Calculations</button>
+                </div>
+            </div>
+            <div class="observation2" id="observation2">
+                <div class="tablediv" id="tablediv2">
+                    <table class="observationTable2" id="observationTable2">
+                        <tr>
+                            <th rowspan="2">Component</th>
+                            <th rowspan="2">Ring Number</th>
+                            <th>1</th>
+                            <th></th>
+                            <th>2</th>
+                            <th>3</th>
+                            <th></th>
+                            <th>4</th>
+                        </tr>
+                        <tr>
+                            <th></th>
+                            <th>&Delta;<sub>12</sub></th>
+                            <th></th>
+                            <th></th>
+                            <th>&Delta;<sub>34</sub></th>
+                            <th></th>
+                        </tr>
+                        <tr>
+                            <td>a</td>
+                            <td></td>
+                            <td></td>
+                            <td>3.094</td>
+                            <td></td>
+                            <td></td>
+                            <td>3.297</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>&delta;<sub>ab</sub></td>
+                            <td>0.645</td>
+                            <td></td>
+                            <td>0.692</td>
+                            <td>0.816</td>
+                            <td></td>
+                            <td>0.590</td>
+                        </tr>
+                        <tr>
+                            <td>b</td>
+                            <td></td>
+                            <td></td>
+                            <td>3.141</td>
+                            <td></td>
+                            <td></td>
+                            <td>3.071</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>&delta;<sub>bc</sub></td>
+                            <td>0.634</td>
+                            <td></td>
+                            <td>0.411</td>
+                            <td>0.574</td>
+                            <td></td>
+                            <td>0.402</td>
+                        </tr>
+                        <tr>
+                            <td>c</td>
+                            <td></td>
+                            <td></td>
+                            <td>2.868</td>
+                            <td></td>
+                            <td></td>
+                            <td>2.899</td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="tableObservations" id="tableObservation">
+                    <button type="button" onclick="closeobservation2()">Close</button>
+                </div>
+            </div>
+            <!-- ib table  -->
+            <div class="observation" id="IBobservation">
+                <div class="tablediv" id="IBtablediv">
+                    <table class="observationTable" id="IBobservationTable">
+                        <tr>
+                            <th>Current (A)</th>
+                            <th>Magnetic Field (T)</th>
+                        </tr>
+                    </table>
+                </div>
+                <div class="tableObservation" id="IBtableObservation">
+                    <button type="button" onclick="closeobservation()">Close</button>
+                    <button type="button" onclick="clearing()" style="width: 70px;">Clear All</button>
+                    <button type="button" onclick="IBgraph()" style="width: 100px;">GRAPH</button>
+                </div>
+            </div>
+            <!-- images name  -->
+            <div class="electromagnet" id="electromagnet" title="Electromagnet" style="display: none;"></div>
+            <div class="constpwrsuply" id="constpwrsuply" title="constant power supply" style="display: none;"></div>
+            <div class="digitalgaussmeter" id="digitalgaussmeter" title="Digital Gauss Meter" style="display: none;"></div>
+            <div id="mtube" class="mtube" title="Mercury discharge tube" style="display: none;"></div>
+            <div id="screen" class="screen" title="Monitor screen" style="display: none;"></div>
+            <div id="flense" class="flense" title="Polariser" style="display: none;"></div>
+            <div id="fpetalon" class="fpetalon" title="Fabrey perot etalon" style="display: none;"></div>
+            <div id="tscope" class="tscope" title="Telescope" style="display: none;"></div>
+            <div id="ccdcmra" class="ccdcmra" title="Ccd camera" style="display: none;"></div>
+            <div id="zstand" class="zstand" title="Zeeman stand" style="display: none;"></div>
+            <div id="zpwrsply" class="zpwrsply" title="Zeeman power supply" style="display: none;"></div>
+            <div id="powersupply" class="powersupply" title="Constant Power Supply" style="display: none;"></div>
+        </div>
+
+        <!-- content3 -->
+        <div style="display: none;" id="content3">
+            <div id="graph"></div>
+        </div>
+
+        <!-- next button -->
+        <button id="buttonup" onclick="up()"><img class="nextimg" src="images/arrow.png" alt="arrow"></button>
+        <button id="buttondown" onclick="down()"><img class="nextimg" src="images/arrow.png" alt="arrow"></button>
+    </div>
+    <script src="js/script.js"></script>
 </body>
+
 </html>

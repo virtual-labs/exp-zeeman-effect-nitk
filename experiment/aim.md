@@ -1,1 +1,1 @@
-### Aim of the experiment
+To observe the Zeeman effect and to calculate Bohr Magneton.
