@@ -1,1 +1,1 @@
-## Experiment name
+## Zeeman Effect
