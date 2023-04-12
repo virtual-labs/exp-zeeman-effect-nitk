@@ -3,7 +3,6 @@
     padding: 0;
     font-family: Arial, Helvetica, sans-serif;
   }
-  
   .simulation {
     width: 800px;
     height: 600px;
@@ -294,65 +293,65 @@
     }
   }
   @keyframes moverings {
-    from {left:4px; top:7px;}
-	  to {left:28px; top:7px;}
+    from {left:46px; top:7px;}
+	  to {left:52px; top:7px;}
   }
   @keyframes movesplitrings {
-    from {left:50px; top:8px;}
-	  to {left:67px; top:8px;}
+    from {left:52px; top:7px;}
+	  to {left:68px; top:7px;}
   }
   @keyframes movesplitrings2 {
-    from {left:67px; top:8px;}
-	  to {left:80px; top:8px;}
+    from {left:68px; top:7px;}
+	  to {left:80px; top:7px;}
   }
   @keyframes movesplitrings3 {
-    from {left:80px; top:8px;}
-	  to {left:87px; top:8px;}
+    from {left:80px; top:7px;}
+	  to {left:88px; top:7px;}
   }
   @keyframes movesplitrings4 {
-    from {left:87px; top:8px;}
-	  to {left:102px; top:8px;}
+    from {left:88px; top:7px;}
+	  to {left:102px; top:7px;}
   } 
   @keyframes movesplitrings5 {
-    from {left:102px; top:8px;}
-	  to {left:110px; top:8px;}
+    from {left:102px; top:7px;}
+	  to {left:111px; top:7px;}
   }
   @keyframes movesplitrings6 {
-    from {left:110px; top:8px;}
-	  to {left:119px; top:8px;}
+    from {left:111px; top:7px;}
+	  to {left:120px; top:7px;}
   }
   @keyframes movesplitrings7 {
-    from {left:119px; top:8px;}
-	  to {left:132px; top:8px;}
+    from {left:120px; top:7px;}
+	  to {left:132px; top:7px;}
   }
   @keyframes movesplitrings8 {
-    from {left:132px; top:8px;}
-	  to {left:142px; top:8px;}
+    from {left:132px; top:7px;}
+	  to {left:142px; top:7px;}
   }
   @keyframes movesplitrings9 {
-    from {left:142px; top:8px;}
-	  to {left:150px; top:8px;}
+    from {left:142px; top:7px;}
+	  to {left:150px; top:7px;}
   }
   @keyframes movesplitrings10 {
-    from {left:150px; top:8px;}
-	  to {left:160px; top:8px;}
+    from {left:150px; top:7px;}
+	  to {left:161px; top:7px;}
   }
   @keyframes movesplitrings11 {
-    from {left:160px; top:8px;}
-	  to {left:169px; top:8px;}
+    from {left:161px; top:7px;}
+	  to {left:169px; top:7px;}
   }
   @keyframes movesplitrings12 {
-    from {left:169px; top:8px;}
-	  to {left:174px; top:8px;}
+    from {left:169px; top:7px;}
+	  to {left:175px; top:7px;}
   }
   #fieldvalue {
     width: 64px;
     height: 21px;
     position: absolute;
     margin-top: 340px;
-    margin-left: 430px;
+    margin-left: 420px;
     border: none;
-    font-size: 16px;
+    font-size: 14px;
     text-align: center;
   }
   #cvalue {
@@ -366,25 +365,25 @@
     text-align: center;
   }
   #voltagevalue {
-    width: 70px;
+    width: 90px;
     height: 21px;
     position: absolute;
-    margin-top: 439px;
-    margin-left: 516px;
+    margin-top: 441px;
+    margin-left: 505px;
     border: none;
-    font-size: 14px;
+    font-size: 12px;
     text-align: center;
   }
   .reading {
     display:none; 
     position: absolute;
     font-size: 16px;
-    left: 415px; 
+    left: 380px; 
     top: 65px;
   }
   .observation {
     display: none;
-    height: 400px;
+    height: 375px;
     width: 700px;
     position: absolute;
     background-color: rgb(174, 215, 232);
@@ -396,7 +395,7 @@
   }
   
   .tablediv {
-    height: 360px;
+    height: 334px;
     justify-content: center;
     display: flex;
     overflow-y: hidden;
@@ -437,7 +436,7 @@
   }
   .observations {
     display: none;
-    height: 515px;
+    height: 520px;
     width: 700px;
     position: absolute;
     background-color: rgb(174, 215, 232);
@@ -454,10 +453,10 @@
     padding: 6px;
   }
   .tablesdiv {
-    height: 475px;
+    height: 481px;
     justify-content: center;
     display: flex;
-    overflow-y: hidden;
+    overflow-y: auto;
   }
   .tableObservations {
     display: flex;
@@ -477,7 +476,7 @@
   }
   .observation2 {
     display: none;
-    height: 410px;
+    height: 375px;
     width: 700px;
     position: absolute;
     background-color: rgb(174, 215, 232);
@@ -502,7 +501,7 @@
   .observationTable2 {
     border-collapse: collapse;
     width: 90%;
-    margin-top: 25px;
+    margin-top: 15px;
     margin-left: 25px;
     margin-bottom: 5px;
     height: min-content;
@@ -579,9 +578,9 @@
     display: none;
     position: absolute;
     background-color: #fff;
-    height: 185px;
+    height: 188px;
     width: 180px;
-    top: 8px;
+    top: 7px;
     left: 255px;
   }
   #paper2 {
@@ -667,11 +666,19 @@
   }
   .zstand {
     height: 4em;
-    width: 29em;
+    width: 24em;
     position: absolute;
     z-index: 5;
-    top: 405px;
-    left: 205px;
+    top: 400px;
+    left: 210px;
+  }
+  .elemgnet {
+    height: 7em;
+    width: 6em;
+    position: absolute;
+    z-index: 5;
+    top: 272px;
+    left: 580px;
   }
   .zpwrsply {
     height: 3em;
