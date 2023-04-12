@@ -8,13 +8,13 @@ let pcheck;
 let ibtable;
 let ibrow;
 let mf = {
-    "1": "2.57T",
-    "1.5": "3.75T",
-    "2": "5.03T",
-    "2.5": "6.35T",
-    "3": "7.45T",
-    "3.5": "8.48T",
-    "4": "9.95T"
+    "1": "2.57KGauss",
+    "1.5": "3.75KGuass",
+    "2": "5.03KGuass",
+    "2.5": "6.35KGuass",
+    "3": "7.45KGuass",
+    "3.5": "8.48KGuass",
+    "4": "9.95KGuass"
 }
 function blurring() {
     if (blurr == true) {
@@ -93,6 +93,7 @@ function update() {
         document.getElementById("tscope").style.display = 'none';
         document.getElementById("ccdcmra").style.display = 'none';
         document.getElementById("zstand").style.display = 'none';
+        document.getElementById("elemgnet").style.display = 'none';
         document.getElementById("zpwrsply").style.display = 'none';
         document.getElementById("powersupply").style.display = 'none';
         document.getElementById("mmrdng").style.display = 'none';
@@ -109,7 +110,7 @@ function update() {
         document.getElementById("addbtn").style.display = 'none';
         document.getElementById("voltagevalue").style.display = 'block';
         document.getElementById("connection").style.display = 'block';
-        document.getElementById("insert").innerHTML = 'Insert tube';
+        document.getElementById("insert").innerHTML = 'Insert mercury tube';
         document.getElementById("insert").disabled = false;
         document.getElementById("current").style.display = 'none';
 
@@ -135,6 +136,7 @@ function update() {
         document.getElementById("tscope").style.display = 'block';
         document.getElementById("ccdcmra").style.display = 'block';
         document.getElementById("zstand").style.display = 'block';
+        document.getElementById("elemgnet").style.display = 'block';
         document.getElementById("zpwrsply").style.display = 'block';
         document.getElementById("powersupply").style.display = 'block';
         pcheck = false;
@@ -210,39 +212,19 @@ function insert() {
             document.getElementById("etalon").style.display = 'block';
             document.getElementById("monitor").style.display = 'block';
             document.getElementById("mercurytube").style.display = 'none';
-            document.getElementById("mmreading").disabled = false;
             setTimeout(function(){
                 document.getElementById("circle1").style.display = 'block';
                 document.getElementById("paper").style.display = 'block';
                 document.getElementById("paper2").style.display = 'block';
-                document.getElementById("mmreading").onclick=function(){
-                    setTimeout(function(){
-                        document.getElementById("mmreading").onclick="";
-                        document.getElementById("hand1").style.display = 'block';
-                        document.getElementById("hand1").style.animation = 'rotatehand 2.5s forwards';
-                        document.getElementById("circle1").style.animation = 'moverings 3s forwards';
-                        setTimeout(function(){
-                            document.getElementById("hand1").style.display = 'none';
-                            document.getElementById("reading1").style.display = 'block';
-                            document.getElementById("readingi").style.display = 'block';
-                            document.getElementById("ireading").style.display = 'block';
-                            document.getElementById("ireading").innerHTML = "2.07";
-                            setTimeout(function(){
-                                document.getElementById("reading1").style.display = 'none';
-                                document.getElementById("readingi").style.display = 'none';
-                                document.getElementById("ireading").style.display = 'none';
-                                document.getElementById("note").style.display = 'block';
-                            },3200) 
-                        },2000)
-                    },1000)
-                }
+                setTimeout(function(){
+                    document.getElementById("note").style.display = 'block';
+                },1500)
             },500)
         },2500)
     }
 }
 
 function note() {
-    document.getElementById("mmreading").disabled = true;
     document.getElementById("magneticfield").disabled = false;
     document.getElementById("note").style.display = 'none';
     document.getElementById("magneticfield").onclick=function(){
@@ -252,7 +234,7 @@ function note() {
             document.getElementById("hand").style.animation = 'rotatehand 2s forwards';
             setTimeout(function(){
                 document.getElementById("hand").style.display = "none";
-                document.getElementById("voltagevalue").innerHTML = "4.00";
+                document.getElementById("voltagevalue").innerHTML = "4A";
                 document.getElementById("mmreading").disabled = false;
                 document.getElementById("magneticfield").disabled = true;
                 setTimeout(function(){
@@ -263,184 +245,202 @@ function note() {
                             document.getElementById("mmreading").onclick="";
                             document.getElementById("hand1").style.display = 'block';
                             document.getElementById("hand1").style.animation = 'rotatehand 2.5s forwards';
-                            document.getElementById("circle2").style.animation = 'movesplitrings 2.5s forwards';
+                            document.getElementById("circle2").style.animation = 'moverings 3s forwards';
                             setTimeout(function(){
                                 document.getElementById("hand1").style.display = 'none';
-                                document.getElementById("reading2").style.display = 'block';
-                                document.getElementById("readings").style.display = 'block';
-                                document.getElementById("sreading").style.display = 'block';
-                                document.getElementById("sreading").innerHTML = "3.18";
+                                document.getElementById("reading1").style.display = 'block';
+                                document.getElementById("readingi").style.display = 'block';
+                                document.getElementById("ireading").style.display = 'block';
+                                document.getElementById("ireading").innerHTML = "2.07mm";
                                 document.getElementById("mmreading").onclick=function(){
                                     setTimeout(function(){
                                         document.getElementById("mmreading").onclick="";
-                                        document.getElementById("reading2").style.display = 'none';
-                                        document.getElementById("readings").style.display = 'none';
-                                        document.getElementById("sreading").style.display = 'none';
+                                        document.getElementById("reading1").style.display = 'none';
+                                        document.getElementById("readingi").style.display = 'none';
+                                        document.getElementById("ireading").style.display = 'none';
                                         document.getElementById("hand1").style.display = 'block';
-                                        document.getElementById("hand1").style.animation = 'rotatehand 2s forwards';
-                                        document.getElementById("circle2").style.animation = 'movesplitrings2 2.5s forwards';
+                                        document.getElementById("hand1").style.animation = 'rotatehand 2.5s forwards';
+                                        document.getElementById("circle2").style.animation = 'movesplitrings 2.5s forwards';
                                         setTimeout(function(){
                                             document.getElementById("hand1").style.display = 'none';
-                                            document.getElementById("reading3").style.display = 'block';
+                                            document.getElementById("reading2").style.display = 'block';
                                             document.getElementById("readings").style.display = 'block';
                                             document.getElementById("sreading").style.display = 'block';
-                                            document.getElementById("sreading").innerHTML = "3.44";
+                                            document.getElementById("sreading").innerHTML = "3.18mm";
                                             document.getElementById("mmreading").onclick=function(){
                                                 setTimeout(function(){
                                                     document.getElementById("mmreading").onclick="";
-                                                    document.getElementById("reading3").style.display = 'none';
+                                                    document.getElementById("reading2").style.display = 'none';
                                                     document.getElementById("readings").style.display = 'none';
                                                     document.getElementById("sreading").style.display = 'none';
                                                     document.getElementById("hand1").style.display = 'block';
                                                     document.getElementById("hand1").style.animation = 'rotatehand 2s forwards';
-                                                    document.getElementById("circle2").style.animation = 'movesplitrings3 2.5s forwards';
+                                                    document.getElementById("circle2").style.animation = 'movesplitrings2 2.5s forwards';
                                                     setTimeout(function(){
                                                         document.getElementById("hand1").style.display = 'none';
-                                                        document.getElementById("reading4").style.display = 'block';
+                                                        document.getElementById("reading3").style.display = 'block';
                                                         document.getElementById("readings").style.display = 'block';
                                                         document.getElementById("sreading").style.display = 'block';
-                                                        document.getElementById("sreading").innerHTML = "3.67";
+                                                        document.getElementById("sreading").innerHTML = "3.44mm";
                                                         document.getElementById("mmreading").onclick=function(){
                                                             setTimeout(function(){
                                                                 document.getElementById("mmreading").onclick="";
-                                                                document.getElementById("reading4").style.display = 'none';
+                                                                document.getElementById("reading3").style.display = 'none';
                                                                 document.getElementById("readings").style.display = 'none';
                                                                 document.getElementById("sreading").style.display = 'none';
                                                                 document.getElementById("hand1").style.display = 'block';
                                                                 document.getElementById("hand1").style.animation = 'rotatehand 2s forwards';
-                                                                document.getElementById("circle2").style.animation = 'movesplitrings4 2.5s forwards';
+                                                                document.getElementById("circle2").style.animation = 'movesplitrings3 2.5s forwards';
                                                                 setTimeout(function(){
                                                                     document.getElementById("hand1").style.display = 'none';
-                                                                    document.getElementById("reading5").style.display = 'block';
+                                                                    document.getElementById("reading4").style.display = 'block';
                                                                     document.getElementById("readings").style.display = 'block';
                                                                     document.getElementById("sreading").style.display = 'block';
-                                                                    document.getElementById("sreading").innerHTML = "4.15";
+                                                                    document.getElementById("sreading").innerHTML = "3.67mm";
                                                                     document.getElementById("mmreading").onclick=function(){
                                                                         setTimeout(function(){
                                                                             document.getElementById("mmreading").onclick="";
-                                                                            document.getElementById("reading5").style.display = 'none';
+                                                                            document.getElementById("reading4").style.display = 'none';
                                                                             document.getElementById("readings").style.display = 'none';
                                                                             document.getElementById("sreading").style.display = 'none';
                                                                             document.getElementById("hand1").style.display = 'block';
                                                                             document.getElementById("hand1").style.animation = 'rotatehand 2s forwards';
-                                                                            document.getElementById("circle2").style.animation = 'movesplitrings5 2.5s forwards';
+                                                                            document.getElementById("circle2").style.animation = 'movesplitrings4 2.5s forwards';
                                                                             setTimeout(function(){
                                                                                 document.getElementById("hand1").style.display = 'none';
-                                                                                document.getElementById("reading6").style.display = 'block';
+                                                                                document.getElementById("reading5").style.display = 'block';
                                                                                 document.getElementById("readings").style.display = 'block';
                                                                                 document.getElementById("sreading").style.display = 'block';
-                                                                                document.getElementById("sreading").innerHTML = "4.31";
+                                                                                document.getElementById("sreading").innerHTML = "4.15mm";
                                                                                 document.getElementById("mmreading").onclick=function(){
                                                                                     setTimeout(function(){
                                                                                         document.getElementById("mmreading").onclick="";
-                                                                                        document.getElementById("reading6").style.display = 'none';
+                                                                                        document.getElementById("reading5").style.display = 'none';
                                                                                         document.getElementById("readings").style.display = 'none';
                                                                                         document.getElementById("sreading").style.display = 'none';
                                                                                         document.getElementById("hand1").style.display = 'block';
                                                                                         document.getElementById("hand1").style.animation = 'rotatehand 2s forwards';
-                                                                                        document.getElementById("circle2").style.animation = 'movesplitrings6 2.5s forwards';
+                                                                                        document.getElementById("circle2").style.animation = 'movesplitrings5 2.5s forwards';
                                                                                         setTimeout(function(){
                                                                                             document.getElementById("hand1").style.display = 'none';
-                                                                                            document.getElementById("reading7").style.display = 'block';
+                                                                                            document.getElementById("reading6").style.display = 'block';
                                                                                             document.getElementById("readings").style.display = 'block';
                                                                                             document.getElementById("sreading").style.display = 'block';
-                                                                                            document.getElementById("sreading").innerHTML = "4.40";
+                                                                                            document.getElementById("sreading").innerHTML = "4.31mm";
                                                                                             document.getElementById("mmreading").onclick=function(){
                                                                                                 setTimeout(function(){
                                                                                                     document.getElementById("mmreading").onclick="";
-                                                                                                    document.getElementById("reading7").style.display = 'none';
+                                                                                                    document.getElementById("reading6").style.display = 'none';
                                                                                                     document.getElementById("readings").style.display = 'none';
                                                                                                     document.getElementById("sreading").style.display = 'none';
                                                                                                     document.getElementById("hand1").style.display = 'block';
                                                                                                     document.getElementById("hand1").style.animation = 'rotatehand 2s forwards';
-                                                                                                    document.getElementById("circle2").style.animation = 'movesplitrings7 2.5s forwards';
+                                                                                                    document.getElementById("circle2").style.animation = 'movesplitrings6 2.5s forwards';
                                                                                                     setTimeout(function(){
                                                                                                         document.getElementById("hand1").style.display = 'none';
-                                                                                                        document.getElementById("reading8").style.display = 'block';
+                                                                                                        document.getElementById("reading7").style.display = 'block';
                                                                                                         document.getElementById("readings").style.display = 'block';
                                                                                                         document.getElementById("sreading").style.display = 'block';
-                                                                                                        document.getElementById("sreading").innerHTML = "4.74";
+                                                                                                        document.getElementById("sreading").innerHTML = "4.40mm";
                                                                                                         document.getElementById("mmreading").onclick=function(){
                                                                                                             setTimeout(function(){
                                                                                                                 document.getElementById("mmreading").onclick="";
-                                                                                                                document.getElementById("reading8").style.display = 'none';
+                                                                                                                document.getElementById("reading7").style.display = 'none';
                                                                                                                 document.getElementById("readings").style.display = 'none';
                                                                                                                 document.getElementById("sreading").style.display = 'none';
                                                                                                                 document.getElementById("hand1").style.display = 'block';
                                                                                                                 document.getElementById("hand1").style.animation = 'rotatehand 2s forwards';
-                                                                                                                document.getElementById("circle2").style.animation = 'movesplitrings8 2.5s forwards';
+                                                                                                                document.getElementById("circle2").style.animation = 'movesplitrings7 2.5s forwards';
                                                                                                                 setTimeout(function(){
                                                                                                                     document.getElementById("hand1").style.display = 'none';
-                                                                                                                    document.getElementById("reading9").style.display = 'block';
+                                                                                                                    document.getElementById("reading8").style.display = 'block';
                                                                                                                     document.getElementById("readings").style.display = 'block';
                                                                                                                     document.getElementById("sreading").style.display = 'block';
-                                                                                                                    document.getElementById("sreading").innerHTML = "4.89";
+                                                                                                                    document.getElementById("sreading").innerHTML = "4.74mm";
                                                                                                                     document.getElementById("mmreading").onclick=function(){
                                                                                                                         setTimeout(function(){
                                                                                                                             document.getElementById("mmreading").onclick="";
-                                                                                                                            document.getElementById("reading9").style.display = 'none';
+                                                                                                                            document.getElementById("reading8").style.display = 'none';
                                                                                                                             document.getElementById("readings").style.display = 'none';
                                                                                                                             document.getElementById("sreading").style.display = 'none';
                                                                                                                             document.getElementById("hand1").style.display = 'block';
                                                                                                                             document.getElementById("hand1").style.animation = 'rotatehand 2s forwards';
-                                                                                                                            document.getElementById("circle2").style.animation = 'movesplitrings9 2.5s forwards';
+                                                                                                                            document.getElementById("circle2").style.animation = 'movesplitrings8 2.5s forwards';
                                                                                                                             setTimeout(function(){
                                                                                                                                 document.getElementById("hand1").style.display = 'none';
-                                                                                                                                document.getElementById("reading10").style.display = 'block';
+                                                                                                                                document.getElementById("reading9").style.display = 'block';
                                                                                                                                 document.getElementById("readings").style.display = 'block';
                                                                                                                                 document.getElementById("sreading").style.display = 'block';
-                                                                                                                                document.getElementById("sreading").innerHTML = "4.99";
+                                                                                                                                document.getElementById("sreading").innerHTML = "4.89mm";
                                                                                                                                 document.getElementById("mmreading").onclick=function(){
                                                                                                                                     setTimeout(function(){
                                                                                                                                         document.getElementById("mmreading").onclick="";
-                                                                                                                                        document.getElementById("reading10").style.display = 'none';
+                                                                                                                                        document.getElementById("reading9").style.display = 'none';
                                                                                                                                         document.getElementById("readings").style.display = 'none';
                                                                                                                                         document.getElementById("sreading").style.display = 'none';
                                                                                                                                         document.getElementById("hand1").style.display = 'block';
                                                                                                                                         document.getElementById("hand1").style.animation = 'rotatehand 2s forwards';
-                                                                                                                                        document.getElementById("circle2").style.animation = 'movesplitrings10 2.5s forwards';
+                                                                                                                                        document.getElementById("circle2").style.animation = 'movesplitrings9 2.5s forwards';
                                                                                                                                         setTimeout(function(){
                                                                                                                                             document.getElementById("hand1").style.display = 'none';
-                                                                                                                                            document.getElementById("reading11").style.display = 'block';
+                                                                                                                                            document.getElementById("reading10").style.display = 'block';
                                                                                                                                             document.getElementById("readings").style.display = 'block';
                                                                                                                                             document.getElementById("sreading").style.display = 'block';
-                                                                                                                                            document.getElementById("sreading").innerHTML = "5.30";
+                                                                                                                                            document.getElementById("sreading").innerHTML = "4.99mm";
                                                                                                                                             document.getElementById("mmreading").onclick=function(){
                                                                                                                                                 setTimeout(function(){
                                                                                                                                                     document.getElementById("mmreading").onclick="";
-                                                                                                                                                    document.getElementById("reading11").style.display = 'none';
+                                                                                                                                                    document.getElementById("reading10").style.display = 'none';
                                                                                                                                                     document.getElementById("readings").style.display = 'none';
                                                                                                                                                     document.getElementById("sreading").style.display = 'none';
                                                                                                                                                     document.getElementById("hand1").style.display = 'block';
                                                                                                                                                     document.getElementById("hand1").style.animation = 'rotatehand 2s forwards';
-                                                                                                                                                    document.getElementById("circle2").style.animation = 'movesplitrings11 2.5s forwards';
+                                                                                                                                                    document.getElementById("circle2").style.animation = 'movesplitrings10 2.5s forwards';
                                                                                                                                                     setTimeout(function(){
                                                                                                                                                         document.getElementById("hand1").style.display = 'none';
-                                                                                                                                                        document.getElementById("reading12").style.display = 'block';
+                                                                                                                                                        document.getElementById("reading11").style.display = 'block';
                                                                                                                                                         document.getElementById("readings").style.display = 'block';
                                                                                                                                                         document.getElementById("sreading").style.display = 'block';
-                                                                                                                                                        document.getElementById("sreading").innerHTML = "5.39";
+                                                                                                                                                        document.getElementById("sreading").innerHTML = "5.30mm";
                                                                                                                                                         document.getElementById("mmreading").onclick=function(){
                                                                                                                                                             setTimeout(function(){
                                                                                                                                                                 document.getElementById("mmreading").onclick="";
-                                                                                                                                                                document.getElementById("reading12").style.display = 'none';
+                                                                                                                                                                document.getElementById("reading11").style.display = 'none';
                                                                                                                                                                 document.getElementById("readings").style.display = 'none';
                                                                                                                                                                 document.getElementById("sreading").style.display = 'none';
                                                                                                                                                                 document.getElementById("hand1").style.display = 'block';
                                                                                                                                                                 document.getElementById("hand1").style.animation = 'rotatehand 2s forwards';
-                                                                                                                                                                document.getElementById("circle2").style.animation = 'movesplitrings12 2.5s forwards';
+                                                                                                                                                                document.getElementById("circle2").style.animation = 'movesplitrings11 2.5s forwards';
                                                                                                                                                                 setTimeout(function(){
                                                                                                                                                                     document.getElementById("hand1").style.display = 'none';
-                                                                                                                                                                    document.getElementById("reading13").style.display = 'block';
+                                                                                                                                                                    document.getElementById("reading12").style.display = 'block';
                                                                                                                                                                     document.getElementById("readings").style.display = 'block';
                                                                                                                                                                     document.getElementById("sreading").style.display = 'block';
-                                                                                                                                                                    document.getElementById("sreading").innerHTML = "5.45";
-                                                                                                                                                                    setTimeout(function(){
-                                                                                                                                                                        document.getElementById("reading13").style.display = 'none';
-                                                                                                                                                                        document.getElementById("readings").style.display = 'none';
-                                                                                                                                                                        document.getElementById("sreading").style.display = 'none';
-                                                                                                                                                                        document.getElementById("observationbutton").disabled = false;
-                                                                                                                                                                    },2000)
+                                                                                                                                                                    document.getElementById("sreading").innerHTML = "5.39mm";
+                                                                                                                                                                    document.getElementById("mmreading").onclick=function(){
+                                                                                                                                                                        setTimeout(function(){
+                                                                                                                                                                            document.getElementById("mmreading").onclick="";
+                                                                                                                                                                            document.getElementById("reading12").style.display = 'none';
+                                                                                                                                                                            document.getElementById("readings").style.display = 'none';
+                                                                                                                                                                            document.getElementById("sreading").style.display = 'none';
+                                                                                                                                                                            document.getElementById("hand1").style.display = 'block';
+                                                                                                                                                                            document.getElementById("hand1").style.animation = 'rotatehand 2s forwards';
+                                                                                                                                                                            document.getElementById("circle2").style.animation = 'movesplitrings12 2.5s forwards';
+                                                                                                                                                                            setTimeout(function(){
+                                                                                                                                                                                document.getElementById("hand1").style.display = 'none';
+                                                                                                                                                                                document.getElementById("reading13").style.display = 'block';
+                                                                                                                                                                                document.getElementById("readings").style.display = 'block';
+                                                                                                                                                                                document.getElementById("sreading").style.display = 'block';
+                                                                                                                                                                                document.getElementById("sreading").innerHTML = "5.45mm";
+                                                                                                                                                                                setTimeout(function(){
+                                                                                                                                                                                    document.getElementById("reading13").style.display = 'none';
+                                                                                                                                                                                    document.getElementById("readings").style.display = 'none';
+                                                                                                                                                                                    document.getElementById("sreading").style.display = 'none';
+                                                                                                                                                                                    document.getElementById("observationbutton").disabled = false;
+                                                                                                                                                                                },2000)
+                                                                                                                                                                            },2000)
+                                                                                                                                                                        },1000)
+                                                                                                                                                                    }
                                                                                                                                                                 },2000)
                                                                                                                                                             },1000)
                                                                                                                                                         }
@@ -471,11 +471,11 @@ function note() {
                                                     },2000)
                                                 },1000)
                                             }
-                                        },2000)
-                                    },1000)
-                                }
-                            },1250)
-                       },1000)
+                                        },1250)
+                                   },1000)
+                                    }
+                            },2000)
+                        },1000)
                     }
                 },1000)
             },1250)
@@ -738,9 +738,9 @@ function IBgraph() {
         },
         yaxis: {
             range: [2, 10],
-            title: "Magnetic Field(T)"
+            title: "Magnetic Field(KGauss)"
         },
-        title: "Current (A) vs Magnetic field (T)"
+        title: "Current (A) vs Magnetic field (KGauss)"
     };
 
     // Display using Plotly
