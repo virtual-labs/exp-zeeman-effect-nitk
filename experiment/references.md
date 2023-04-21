@@ -10,14 +10,13 @@
 <li>Brooks, Robert L. The fundamentals of atomic and molecular physics. New York: Springer, 2013.</li>
 </ol>
 </td>
-<td>Developer : Dr. Ajith K M | NITK
-Developer : Dr. Pruthviraj U  | NITK</br></br>
+<td>Developer : Dr. Ajith K M    | NITK<br>Developer : Dr. K.V.Gangadharan  | NITK</br></br>
 Contributors :
 <ul style="list-style-type: none;">
 <li>Saisree P        | NITK</li>
 <li>Sibeesh Padiyoor | NITK</li>
 <li>Akshaya          | NITK</li>
-<li>Anusha           | NITK</li>
-  </ul></td>
+<li>Anusha B Salian  | NITK</li>
+</ul></td>
 </tr>
 </table>
