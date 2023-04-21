@@ -1,0 +1,90 @@
+{
+  "version": 2.0,
+  "questions": [
+    {
+      "question": "Which of the following can cause the Zeeman effect?",
+      "answers": {
+        "a": "Electric field",
+        "b": "Magnetic field",
+        "c": "Gravitational field",
+        "d": "Electrostatic field"
+      },
+      "explanations": {
+        "a": "",
+        "b": "",
+        "c": "",
+        "d": ""
+      },
+      "correctAnswer": "b",
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "The stark effect is observed when the atoms are placed in",
+      "answers": {
+        "a": "Electric field",
+        "b": "Magnetic field",
+        "c": "Gravitational field",
+        "d": "Electrostatic field"
+      },
+      "explanations": {
+        "a": "",
+        "b": "",
+        "c": "",
+        "d": ""
+      },
+      "correctAnswer": "a",
+      "difficulty": "advanced"
+    },
+    {
+      "question": "Normal Zeeman effect consists of a triplet when viewed in ______ direction and a doublet in _______ direction.",
+      "answers": {
+        "a": "Longitudinal and transverse",
+        "b": "Transverse and longitudinal",
+        "c": "Longitudinal and longitudinal",
+        "d": "Transverse and transverse"
+      },
+      "explanations": {
+        "a": "",
+        "b": "",
+        "c": "",
+        "d": ""
+      },
+      "correctAnswer": "b",     
+      "difficulty": "intermediate"
+    },
+    {
+      "question": "The number of split levels in the magnetic field is ________",
+      "answers": {
+        "a": "2n",
+        "b": "2n + 1",
+        "c": "2l",
+        "d": "2l + 1"
+      },
+      "explanations": {
+        "a": "",
+        "b": "",
+        "c": "",
+        "d": ""
+      },
+      "correctAnswer": "d",
+      "difficulty": "advanced"
+    },
+    {
+      "question": "What is the energy difference between the Zeeman split spectral lines?",
+      "answers": {
+        "a": "Proportional to the magnetic field strength",
+        "b": "Proportional to the electric field strength",
+        "c": "Independent of the field strength",
+        "d": "Inversely proportional to the field strength"
+      },
+      "explanations": {
+        "a": "",
+        "b": "",
+        "c": "",
+        "d": ""
+      },
+      "correctAnswer": "a",
+      "difficulty": "advanced"
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+To observe the Zeeman effect and to calculate Bohr Magneton.

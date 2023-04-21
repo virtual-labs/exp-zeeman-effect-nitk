@@ -1,0 +1,24 @@
+
+/home/runner/work/exp-zeeman-effect-nitk/exp-zeeman-effect-nitk/experiment/simulation/js/script.js
+    1:5   warning  'b' is assigned a value but never used         no-unused-vars
+   34:10  warning  'up' is defined but never used                 no-unused-vars
+   39:10  warning  'down' is defined but never used               no-unused-vars
+   66:10  warning  'update' is defined but never used             no-unused-vars
+  154:10  warning  'insert' is defined but never used             no-unused-vars
+  238:10  warning  'note' is defined but never used               no-unused-vars
+  634:2   warning  Unnecessary semicolon                          no-extra-semi
+  636:10  warning  'Refresh' is defined but never used            no-unused-vars
+  638:2   warning  Unnecessary semicolon                          no-extra-semi
+  640:10  warning  'openobservation' is defined but never used    no-unused-vars
+  665:10  warning  'closeobservation2' is defined but never used  no-unused-vars
+  674:10  warning  'table2' is defined but never used             no-unused-vars
+  685:10  warning  'AddingToArray' is defined but never used      no-unused-vars
+  707:10  warning  'clearing' is defined but never used           no-unused-vars
+  723:10  warning  'IBgraph' is defined but never used            no-unused-vars
+  760:5   warning  'Plotly' is not defined                        no-undef
+  763:10  warning  'help' is defined but never used               no-unused-vars
+  775:10  warning  'hallcovalue' is defined but never used        no-unused-vars
+
+✖ 18 problems (0 errors, 18 warnings)
+  0 errors and 2 warnings potentially fixable with the `--fix` option.
+

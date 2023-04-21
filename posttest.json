@@ -1,0 +1,91 @@
+{
+  "version": 2.0,
+  "questions": [
+    {
+      "question": "Zeeman effect is used to study which property of the sun?",
+      "answers": {
+        "a": "Solar flares",
+        "b": "Sunspots",
+        "c": "Magnetic fields",
+        "d": "Electric fields"
+      },
+      "explanations": {
+        "a": "",
+        "b": "",
+        "c": "",
+        "d": ""
+      },
+      "correctAnswer": "c",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "The number of splitting levels in 2p orbital would be ________",
+      "answers": {
+        "a": "1",
+        "b": "2",
+        "c": "3",
+        "d": "4"
+      },
+      "explanations": {
+        "a": "",
+        "b": "",
+        "c": "",
+        "d": ""
+      },
+      "correctAnswer": "c",
+      "difficulty": "advanced"
+    },
+    {
+      "question": "In the normal Zeeman effect, the single spectral line split up into _____components.",
+      "answers": {
+        "a": "only one",
+        "b": "2",
+        "c": "3",
+        "d": "several"
+      },
+      "explanations": {
+        "a": "",
+        "b": "",
+        "c": "",
+        "d": ""
+      },
+      "correctAnswer": "c",
+      "difficulty": "advanced"
+    },
+    {
+      "question": "In the anomalous Zeeman effect, the single spectral line split up into _____components.",
+      "answers": {
+        "a": "only one",
+        "b": "2",
+        "c": "3",
+        "d": "several"
+      },
+      "explanations": {
+        "a": "",
+        "b": "",
+        "c": "",
+        "d": ""
+      },
+      "correctAnswer": "d",
+      "difficulty": "advanced"
+    },
+    {
+      "question": "Zeeman effect is a _______ Phenomenon",
+      "answers": {
+        "a": "Magnetic",
+        "b": "Optical",
+        "c": "Magneto-optical",
+        "d": "electric"
+      },
+      "explanations": {
+        "a": "",
+        "b": "",
+        "c": "",
+        "d": ""
+      },
+      "correctAnswer": "c",
+      "difficulty": "intermediate"
+    }
+  ]
+}
+ 
