@@ -70,6 +70,7 @@ function update() {
         document.getElementById("insert").innerHTML = 'Insert Hall probe';
         document.getElementById("remove").innerHTML = 'Remove Hall probe';
         document.getElementById("finalresult").disabled = true;
+        document.getElementById("mmreading").disabled = true;
         document.getElementById("current").style.display = 'block';
         document.getElementById("addbtn").style.display = 'block';
         document.getElementById("circuit1").style.display = 'block';
@@ -98,6 +99,8 @@ function update() {
         document.getElementById("powersupply").style.display = 'none';
         document.getElementById("mmrdng").style.display = 'none';
         document.getElementById("magfield").style.display = 'none';
+        document.getElementById("connection").style.display = 'none';
+        document.getElementById("connection").style.display = 'none';
         document.getElementById('calculatedvalue').style.display="none";
         document.getElementById('originalvalue').style.display="none";
         document.getElementById('error').style.display="none";
@@ -110,6 +113,8 @@ function update() {
         document.getElementById("addbtn").style.display = 'none';
         document.getElementById("voltagevalue").style.display = 'block';
         document.getElementById("connection").style.display = 'block';
+        document.getElementById("connection2").style.display = 'none';
+        document.getElementById("connection3").style.display = 'block';
         document.getElementById("insert").innerHTML = 'Insert mercury tube';
         document.getElementById("insert").disabled = false;
         document.getElementById("current").style.display = 'none';
@@ -158,6 +163,8 @@ function insert() {
         document.getElementById("circuit1").style.display = 'none';
         document.getElementById("circuit2").style.display = 'block';
         document.getElementById("connection").style.display = 'none';
+        document.getElementById("connection2").style.display = 'none';
+        document.getElementById("connection3").style.display = 'none';
         document.getElementById("stand").style.display = 'none';
         document.getElementById("crntpwrsuply").style.display = 'none';
         document.getElementById("zmnpwrsuply").style.display = 'none';
@@ -182,6 +189,8 @@ function insert() {
         document.getElementById("circuit1").style.display = 'none';
         document.getElementById("circuit2").style.display = 'none';
         document.getElementById("connection").style.display = 'none';
+        document.getElementById("connection2").style.display = 'none';
+        document.getElementById("connection3").style.display = 'none';
         document.getElementById("stand").style.display = 'none';
         document.getElementById("crntpwrsuply").style.display = 'none';
         document.getElementById("zmnpwrsuply").style.display = 'none';
@@ -203,6 +212,8 @@ function insert() {
             document.getElementById("elemagnet").style.display = 'none';
             document.getElementById("mertube").style.display = 'none';
             document.getElementById("connection").style.display = 'block';
+            document.getElementById("connection2").style.display = 'block';
+            document.getElementById("connection3").style.display = 'block';
             document.getElementById("stand").style.display = 'block';
             document.getElementById("crntpwrsuply").style.display = 'block';
             document.getElementById("zmnpwrsuply").style.display = 'block';
@@ -497,6 +508,7 @@ function remove() {
         document.getElementById("circuit2").style.display = 'none';
         document.getElementById("stand").style.display = 'none';
         document.getElementById("connection").style.display = 'none';
+        document.getElementById("connection3").style.display = 'none';
         document.getElementById("crntpwrsuply").style.display = 'none';
         document.getElementById("zmnpwrsuply").style.display = 'none';
         document.getElementById("elemagnet").style.display = 'none';
@@ -540,6 +552,7 @@ function remove() {
         document.getElementById("circuit2").style.display = 'none';
         document.getElementById("stand").style.display = 'block';
         document.getElementById("connection").style.display = 'block';
+        document.getElementById("connection3").style.display = 'block';
         document.getElementById("crntpwrsuply").style.display = 'block';
         document.getElementById("zmnpwrsuply").style.display = 'block';
         document.getElementById("ccdcamera").style.display = 'block';
