@@ -1,0 +1,952 @@
+/* rem and em don not depend on html font size in media queries, Instead 1rem = 1em = 16px
+rem: root font size
+em:current font size
+*/
+
+/* *************only screen******* */
+
+/* **************************** */
+/* Below 1344px (Smaller Desktops) */
+/* **************************** */
+
+@media (min-width: 1200px) {
+  
+.objective {
+  padding: 15.6rem;
+}
+.canvas__div {
+  grid-template-columns: 1fr;
+}
+/* #variables {
+  width: 100%;
+} */
+#IBgraph{
+ transform: scale(0.75);
+        margin-left: -111px;
+        margin-top: -154px;
+        height: auto;
+        width: 121%;
+}
+#fieldvalue{
+  position: absolute;
+  left: 63%;
+  top: 73%;        
+  font-size: 10px;
+  /* font-size: 14px; */
+  /* z-index: 101; */
+}
+#cvalue{
+  position: absolute;
+        left: 18%;
+        top: 66%;
+        font-size: 12px;
+}
+#probe {
+  width: 2%;
+  height: 22%;
+  position: absolute;
+  top: 22%;
+  left: 50.5%!important;
+  /* left: 293px; */
+  overflow: hidden;
+  animation-duration: 3s;
+  transition: transform .3s;
+  display: none;
+}
+#wire {
+  width: 31%;
+  height: 44%;
+  position: absolute;
+  top: 33%;
+  left: 35% !important;
+
+    overflow: hidden;
+    animation-duration: 3s;
+    transition: transform .3s;
+  display: none;
+}
+.circuit {
+  width: 71%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* margin-left: 78px; */
+}
+#zeeeman-box{
+  transform: scale(0.77);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: -22%;
+  margin-top: -123px;
+
+}
+#circuit2 {
+
+  width: 73%;
+  position: relative;
+  left: 10.3%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  }
+  .practice {
+    padding: 8.7rem;
+  }
+}
+
+/* **************************** */
+/* Below 1200px (Lanscape Tablets) */
+/* **************************** */
+
+@media (max-width: 75em) {
+  body {
+    width: 100%;
+    margin: unset;
+  }
+  .title-div h1 {
+    font-size: 2.5rem;
+  }
+  .task-title {
+    font-size: 2rem;
+  }
+  .tool-menu {
+    font-size: 2rem;
+    gap: 2rem;
+  }
+  .icons {
+    width: 3rem;
+    height: 3rem;
+  }
+  .ctrl-icons {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .tool-list span {
+    font-size: 1.2rem;
+  }
+  .canvas {
+    display: block;
+    /* width: 100%;
+    height: 100%; */
+    /* background-color: red; */
+  }
+  .div__control img {
+    width: 3rem;
+    height: 2.8rem;
+  }
+  /* #variables {
+    width: 100%;
+  } */
+ 
+  .objective {
+    padding: 11.5rem;
+  }
+  .canvas__div {
+    grid-template-columns: 1fr;
+  }
+  #IBgraph{
+    transform: scale(0.95);
+    margin-left: 8px;
+    margin-top: -74px;
+    height: auto;
+    width: 86%;
+}
+  #fieldvalue{
+    position: absolute;
+    left: 65%;
+    top: 73%;
+    font-size: 16px;
+    /* z-index: 101; */
+
+  }
+  #cvalue{
+    position: absolute;
+    left: 24%;
+    top: 67%;
+    font-size: 15px;
+  }
+  #probe {
+    width: 2%;
+    height: 22%;
+    position: absolute;
+    top: 22%;
+    left: 53.2%!important;
+    /* left: 293px; */
+    overflow: hidden;
+    animation-duration: 3s;
+    transition: transform .3s;
+    display: none;
+  }
+  #wire {
+    width: 31%;
+    height: 44%;
+    position: absolute;
+    top: 33%;
+    left: 37.7% !important;
+  
+      overflow: hidden;
+      animation-duration: 3s;
+      transition: transform .3s;
+    display: none;
+  }
+  .circuit {
+    width: 71%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* margin-left: 124px; */
+}
+#zeeeman-box{
+  transform: scale(0.74);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 17%;
+  margin-top: -78px;
+}
+#circuit2 {
+
+  width: 69%;
+  position: relative;
+  left: 15.4%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  }
+  .practice {
+    padding: 4.5rem;
+  }
+}
+
+/* **************************** */
+/* Below 944px ( Tablets) */
+/* **************************** */
+
+@media (max-width: 59em) {
+  .tool-link:link,
+  .tool-link:visited {
+    gap: 0.5rem;
+    font-size: 1.4rem;
+    flex-direction: column;
+  }
+
+  .title-div h1 {
+    font-size: 2rem;
+  }
+  .sidebar {
+    position: fixed;
+    padding: 0;
+    bottom: 0;
+    left: 0;
+    flex-direction: row;
+    width: 100%;
+    backdrop-filter: blur(10rem);
+    z-index: 101;
+    justify-content: space-evenly;
+    border-radius: 0;
+    scroll-behavior: auto;
+  }
+  .tool-menu {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    width: 100%;
+    font-size: 2.4rem;
+    justify-content: space-evenly;
+    padding: 1rem;
+  }
+  
+  .canvas {
+    display: block;
+    /* width: 100%;
+    height: 100%; */
+    /* background-color: red; */
+  }
+  .main-section {
+    grid-template-columns: 1fr;
+  }
+  .canvas__div {
+    grid-template-columns: 1fr;
+  }
+  .canvas {
+    display: block;
+    /* width: 100%;
+    height: 100%; */
+    border: none;
+  }
+  .footer {
+    margin-bottom: 78px;
+  }
+  .objective {
+    padding: 13rem;
+  }
+  #IBgraph{
+    transform: scale(0.85);
+    margin-left: -39px;
+    margin-top: -124px;
+    height: auto;
+    width: 103%;
+
+    
+  }
+  #fieldvalue{
+    position: absolute;
+    left: 65%;
+    top: 72%;
+    font-size: 16px;
+    /* z-index: 101; */
+  }
+  #cvalue{
+    position: absolute;
+    left: 23%;
+    top: 67%;
+    font-size: 15px;
+  }
+  #probe {
+    width: 2%;
+    height: 22%;
+    position: absolute;
+    top: 22%;
+    left: 53.2%!important;
+    /* left: 293px; */
+    overflow: hidden;
+    animation-duration: 3s;
+    transition: transform .3s;
+    display: none;
+  }
+  #wire {
+    width: 31%;
+    height: 44%;
+    position: absolute;
+    top: 33%;
+    left: 37.7%!important;
+  
+      overflow: hidden;
+      animation-duration: 3s;
+      transition: transform .3s;
+    display: none;
+  }
+  .circuit {
+    width: 71%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* margin-left: 118px; */
+}
+#zeeeman-box{
+  transform: scale(0.74);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 11%;
+  margin-top: -78px;
+}
+#circuit2 {
+
+  width: 69%;
+  position: relative;
+  left: 15.4%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  }
+  .practice {
+    padding: 4.5rem;
+  }
+  /* #IBgraph{
+    transform: scale(0.48);
+    justify-self: center;
+    margin-left: -219px;
+    margin-top: -169px;
+  } */
+}
+
+/* **************************** */
+/* Below 820px (Smaller Tablets) */
+/* **************************** */
+@media (max-width: 48em) {
+  .main-section {
+    grid-template-columns: 1fr;
+  }
+  .canvas__div {
+    grid-template-columns: 1fr;
+  }
+  .canvas {
+    display: block;
+    /* width: 100%;
+    height: 100%; */
+    border: none;
+  }
+  .tool-list span {
+    font-size: 1.6rem;
+  }
+  .tool-menu {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    width: 100%;
+    font-size: 2.4rem;
+    justify-content: space-evenly;
+    padding: 1rem;
+  }
+  .footer {
+    margin-bottom: 78px;
+  }
+  .objective {
+    padding: 11rem;
+  }
+  #IBgraph{
+    transform: scale(0.65);
+    margin-left: -118px;
+    margin-top: -165px;
+    height: auto;
+    width: 125%;
+}
+  #fieldvalue{
+    position: absolute;
+    left: 65%;
+    top: 72%;
+    font-size: 14px;
+    /* z-index: 101; */
+  }
+  #cvalue{
+    position: absolute;
+    left: 24%;
+    top: 66%;
+    font-size: 15px;
+  }
+  #probe {
+    width: 2%;
+    height: 22%;
+    position: absolute;
+    top: 22%;
+    left: 53.4%!important;
+    /* left: 293px; */
+    overflow: hidden;
+    animation-duration: 3s;
+    transition: transform .3s;
+    display: none;
+  }
+  #wire {
+    width: 31%;
+    height: 44%;
+    position: absolute;
+    top: 33%;
+    left: 37.75%!important;
+  
+      overflow: hidden;
+      animation-duration: 3s;
+      transition: transform .3s;
+    display: none;
+  }
+  .circuit {
+    width: 71%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* margin-left: 101px; */
+}
+#zeeeman-box{
+  transform: scale(0.74);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 3%;
+        margin-top: -78px;
+
+}
+#circuit2 {
+
+  width: 69%;
+  position: relative;
+  left: 15.4%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  }
+  .practice {
+    padding: 3.5rem;
+  }
+  /* #IBgraph{
+    transform: scale(0.48);
+    justify-self: center;
+    margin-left: -219px;
+    margin-top: -169px;
+  } */
+}
+
+/* **************************** */
+/* Below 704px (Smaller Tablets) */
+/* **************************** */
+@media (max-width: 44em) {
+  .canvas__div {
+    grid-template-columns: 1fr;
+  }
+  .img-div {
+    flex-direction: column;
+  }
+  .title-div {
+    gap: 0rem;
+    text-align: center;
+  }
+  .round {
+    width: 0.6rem;
+    height: 0.6rem;
+  }
+  .logo-div {
+    width: 6.5rem;
+  }
+  .main__task-div:nth-child(4) {
+    margin-bottom: 6rem;
+  }
+ 
+  .cross-img {
+    width: 60%;
+  }
+  .canvas {
+    display: block;
+    /* width: 100%;
+    height: 100%; */
+    border: none;
+  }
+  .footer {
+    margin-bottom: 78px;
+  }
+ 
+  .objective {
+    padding: 13rem;
+  }
+  /* #IBgraph{
+    
+    transform: scale(0.8);
+   
+  } */
+  #IBgraph{
+    transform: scale(0.65);
+    margin-left: -118px;
+    margin-top: -165px;
+    height: auto;
+    width: 133%;
+}
+  .observation{
+    transform: scale(1);
+  }
+  #fieldvalue{
+    position: absolute;
+    left: 66%;
+    top: 72%;
+    font-size: 13px;
+    /* z-index: 101; */
+  }  
+  #cvalue{
+    position: absolute;
+    left: 17%;
+    top: 66%;
+    font-size: 13px;
+  }
+  #probe {
+    width: 2%;
+    height: 22%;
+    position: absolute;
+    top: 22%;
+    left: 53.1%!important;
+    /* left: 293px; */
+    overflow: hidden;
+    animation-duration: 3s;
+    transition: transform .3s;
+    display: none;
+  }
+  #wire {
+    width: 31%;
+    height: 44%;
+    position: absolute;
+    top: 33%;
+    left: 37.7%!important;
+  
+      overflow: hidden;
+      animation-duration: 3s;
+      transition: transform .3s;
+    display: none;
+  }
+  .circuit {
+    width: 71%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* margin-left: 83px; */
+}
+#zeeeman-box{
+  transform: scale(0.74);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: -9%;
+  margin-top: -78px;
+
+}
+#circuit2 {
+
+  width: 78%;
+  position: relative;
+  left: 10.3%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  }
+  .practice {
+    padding: 3.8rem;
+  }
+}
+
+/* **************************** */
+/* Below 540px (Smaller Tablets) */
+/* **************************** */
+@media (max-width: 34em) {
+  /* .container {
+    gap: 1rem;
+  } */
+
+  .title-div h1 {
+    /* padding: 0.2rem; */
+
+    font-size: 1.6rem;
+    /* text-align: center; */
+  }
+
+  .logo-div {
+    width: 4.5rem;
+  }
+  .div__control {
+    gap: 2rem;
+    /* top: 1.8rem;
+    right: 1.5rem; */
+  }
+  .ctrl-icons {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+  .tool-menu {
+    gap: 1.5rem;
+  }
+  .tool-list span {
+    font-size: 1.2rem;
+  }
+  .task-title {
+    font-size: 1.7rem;
+  }
+  canvas {
+    width: 100%;
+  }
+  label,
+  select,
+  input,
+  p {
+    display: inline-block;
+    font-size: 1.5rem;
+  }
+  .main {
+    gap: 0.5rem;
+  }
+  .main-section {
+    gap: 0.5rem;
+  }
+  .sidebar {
+    border-radius: 0;
+  }
+  .canvas {
+    display: block;
+    /* width: 100%;
+    height: 100%; */
+    border: none;
+  }
+  .div__control img {
+    width: 2.7rem;
+    height: 2.5rem;
+  }
+  .tooltip {
+    font-size: 1rem;
+  }
+  .footer {
+    margin-bottom: 78px;
+  }
+ 
+  .objective {
+    padding: 13rem;
+  }
+  #IBgraph{
+    transform: scale(0.45);
+    margin-left: -223px;
+    margin-top: -200px;
+    height: auto;
+    width: 181%;
+}
+.tool-menu {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  width: 100%;
+  font-size: 2.4rem;
+  justify-content: space-evenly;
+  padding: 1rem;
+}
+  
+  .observation{
+    transform: scale(1);
+  }
+  #instruct{
+    font-size: 2rem;
+  }
+  #fieldvalue{
+    position: absolute;
+    left: 67%;
+    top: 73%;
+    font-size: 11px;
+    /* z-index: 101; */
+
+  }
+  #cvalue{
+    position: absolute;
+    left: 14%;
+    top: 66%;
+    font-size: 11px;
+  }
+  #probe {
+    width: 2%;
+    height: 22%;
+    position: absolute;
+    top: 22%;
+    left: 53.4%!important;
+    /* left: 293px; */
+    overflow: hidden;
+    animation-duration: 3s;
+    transition: transform .3s;
+    display: none;
+  }
+  #wire {
+    width: 31%;
+    height: 44%;
+    position: absolute;
+    top: 33%;
+    left: 37.7%!important;
+  
+      overflow: hidden;
+      animation-duration: 3s;
+      transition: transform .3s;
+    display: none;
+  }
+  .circuit {
+    width: 71%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* margin-left: 62px; */
+}
+#zeeeman-box{
+  transform: scale(0.59);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: -50%;
+  margin-top: -78px;
+
+}
+#circuit2 {
+
+  width: 90%;
+  position: relative;
+  left: 3.7%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  }
+  .practice {
+    padding: 5.5rem;
+  }
+  
+}
+@media (max-width: 27em) {
+  .sidebar {
+    position: fixed;
+    padding: 0;
+    bottom: 0;
+    left: 0;
+    flex-direction: row;
+    width: 100%;
+    backdrop-filter: blur(10rem);
+    z-index: 101;
+    justify-content: space-evenly;
+    border-radius: 0;
+    scroll-behavior: auto;
+  }
+  .tool-menu {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    width: 100%;
+    font-size: 2.4rem;
+    justify-content: space-evenly;
+    padding: 1rem;
+  }
+  .canvas__div {
+    grid-template-columns: 1fr;
+   
+  }
+  .objective {
+    padding: 13rem;
+  }
+  .apparatus-screen {
+    grid-template-columns: 1fr;
+  }
+  .practice {
+    padding: 7.5rem;
+  }
+  .quiz-div {
+    padding: 0.5rem;
+    width: 100%;
+  }
+  .answers {
+    grid-template-columns: 1fr;
+  }
+  .practice-step-no {
+    width: 3rem;
+    height: 3rem;
+  }
+  .btn-next,
+  .btn-reset,
+  .btn-top {
+    width: 3rem;
+    height: 3rem;
+  }
+  .footer {
+    margin-bottom: 78px;
+  }
+  
+
+  #IBgraph{
+    transform: scale(0.45);
+    margin-left: -223px;
+    margin-top: -200px;
+    height: auto;
+    width: 200%;
+}
+  .observation{
+    transform: scale(1);
+  }
+  .circuit {
+    width: 71%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* margin-left: 48px; */
+  }
+
+  #circuit2 {
+
+    width: 91%;
+    position: relative;
+    left: -3.3%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    }
+  #fieldvalue{
+    position: absolute;
+    left: 68%;
+    top: 72%;
+    font-size: 9px;
+    /* z-index: 101; */
+  }
+  #cvalue{
+    position: absolute;
+        left: 14%;
+        top: 65%;
+        font-size: 8px;
+  }
+  #voltagevalue{
+    position: absolute;
+        left: 18%;
+        top: 65%;
+        font-size: 11px;
+  }
+  #probe {
+    width: 2%;
+    height: 22%;
+    position: absolute;
+    top: 38%;
+    left: 54%!important;
+    /* left: 293px; */
+    overflow: hidden;
+    animation-duration: 3s;
+    transition: transform .3s;
+    display: none;
+  }
+
+  #note{
+    position: absolute; 
+    padding: 10px; 
+    border: 1px solid black; 
+    background-color: black; 
+    border-radius: 5px;  
+    top: 160px; 
+    width: 300px; 
+    display: none;    
+    left: 72%!important;
+    transform: scale(1.5);
+  }
+  #wire {
+    width: 31%;
+    height: 44%;
+    position: absolute;
+    top: 33%;
+    left: 38.5%!important;
+  
+      overflow: hidden;
+      animation-duration: 3s;
+      transition: transform .3s;
+    display: none;
+  }
+  #zeeeman-box{
+    transform: scale(0.55);
+    margin-left: -105%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -78px;
+
+  }
+  #circuit1 {
+    /* transform: scale(0.9); */
+    width: 116% !important;
+    position: relative;
+    left: -5.3% !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  display: none;
+  /* margin-left: 20px; */
+  
+  }
+  
+}
+/* 
+
+- Font sizes (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+
+- Spacing system (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+
+ */
