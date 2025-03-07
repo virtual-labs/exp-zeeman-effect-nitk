@@ -456,7 +456,8 @@ h1 {
   grid-column: 1/-1;
   letter-spacing: 0.2rem;
 }
-.btn:disabled {
+
+.insert-reset-observation button:disabled {
   background-image: linear-gradient(
     to bottom,
     var(--clr-body-clr),
@@ -1255,18 +1256,22 @@ input[type="radio"] {
   left: 415px;
   top: 100px;
 }
-#readingi {
+/* #readingi {
   display: none;
-}
-#ireading {
+} */
+/* #ireading {
+  font-size: 1.8rem;
   margin-top: 29px;
   margin-left: 487px;
-}
-#readings {
+} */
+#readings,
+#readingi {
+  font-size: 1.8rem;
   display: none;
   margin-top: 29px;
   margin-left: 480px;
 }
+
 #electromagnet {
   display: none;
 }
@@ -1378,11 +1383,10 @@ input[type="radio"] {
 #magfield {
   display: none;
 }
-#mmrdng{
+#mmrdng {
   display: none;
 }
 
- 
 #leastcount {
   display: none;
   font-size: 16px;
