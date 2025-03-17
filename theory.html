@@ -1,0 +1,662 @@
+<!DOCTYPE html><html lang="en"><head>
+      <!--Google Tag Manager-->
+      <script class="gtm">
+        var dataLayer = [{
+        'labName': 'Virtual Lab',
+        'discipline': 'Test',
+        'college': 'NITK',
+        'phase': 'Testing',
+        'expName': 'ZEEMAN EFFECT',
+        'expShortName': 'zeeman-effect'
+        }];
+    
+        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-5NMQ9NQ');
+      </script>
+      <!--End Google Tag Manager-->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="" name="description">
+    <meta content="" name="author">
+    
+    	<meta name="experiment-short-name" content="zeeman-effect">
+    	<meta name="developer-institute" content="NITK">
+    	<meta name="learning-unit" content="ZEEMAN EFFECT">
+    	<meta name="task-name" content="Theory">
+    
+    <!-- For iPhone -->
+    <meta name="msapplication-TileColor" content="#4076e0">
+    <!-- Chrome, Firefox OS and Opera -->
+    <meta name="theme-color" content="#4076e0">
+    <!-- Windows Phone -->
+    <meta name="msapplication-navbutton-color" content="#4076e0">
+    <title>Virtual Labs</title>
+    <link rel="shortcut icon" href="./assets/images/favicon.ico">
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css" integrity="sha512-Oy18vBnbSJkXTndr2n6lDMO5NN31UljR8e/ICzVPrGpSud4Gkckb8yUpqhKuUNoE+o9gAb4O/rAxxw1ojyUVzg==" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&amp;family=Raleway&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./assets/css/github-markdown.min.css">
+    <link rel="stylesheet" href="./assets/css/vlabs-style.css">
+    <link rel="stylesheet" href="./assets/css/toast.css">
+    <link rel="stylesheet" href="./assets/katex_assets/katex.min.css">
+    
+    <script src="./assets/js/jquery-3.4.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <style>
+      h1 {
+      font-size: 1.8rem;
+      }
+      h2 {
+      font-size: 1.4rem;
+      }
+      h3 {
+      font-size: 1.2rem;
+      }
+
+      h2, h3 {
+      font-weight: 800;
+      }
+    </style>
+    
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"></head>
+  <body class="p-0 container-fluid vlabs-page d-flex flex-column justify-content-between">
+      <!--Google Tag Manager (noscript)-->
+      <noscript class="gtm">
+        <iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-5NMQ9NQ" style="display:none;visibility:hidden" width="0">
+        </iframe>
+      </noscript>
+      <!--End Google Tag Manager (noscript)-->
+  
+      <header class="vlabs-header sticky-top bg-white">
+        <nav class="p-0 navbar navbar-light d-flex align-items-stretch">
+          
+          <button class="navbar-toggler px-4" type="button" onclick="toggle()">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+      
+          <div class="d-flex justify-content-center">        
+            <a href="https://vlab.co.in" class="navbar-brand">
+              <img src="./assets/images/vlabs-color-small-moe.jpg" alt="vlabs logo" class="vlabs-logo">
+            </a>
+          </div>
+          
+          <div id="headerNavbar" class="d-none border-top flex-grow-1 d-lg-flex align-items-center justify-content-end">
+            <div class="svc-rating-display">
+                <rating-display spreadsheetid="1x12nhpp0QvnsA6x-O1sV4IA9SAbfVsq_wiexWkutOmU" sheetname="Experiment-Database" columnname="Experiment Short Name" columnvalue="zeeman-effect" imagesdirectory="/plugins/svc-rating/images/">
+                </rating-display>
+            </div>      <div class="svc-rating-submit">
+                <rating-submit title="Rate" this="" experiment="">
+                </rating-submit>
+            </div>      <bug-report id="bug-report" title="[BUG REPORT] ZEEMAN EFFECT" page-type="text" context-info="{&quot;organisation&quot;:&quot;Virtual Labs&quot;,&quot;developer_institute&quot;:&quot;NITK&quot;,&quot;expname&quot;:&quot;ZEEMAN EFFECT&quot;,&quot;labname&quot;:&quot;Virtual Lab&quot;,&quot;phase&quot;:&quot;Testing&quot;}" checkbox-json="{&quot;text&quot;:[&quot;Insufficient Content&quot;],&quot;video&quot;:[&quot;Insufficient Content&quot;],&quot;assesment&quot;:[&quot;Incorrect Options&quot;,&quot;Incorrect Answer&quot;,&quot;Incorrect Question&quot;],&quot;assessment&quot;:[&quot;Incorrect Options&quot;,&quot;Incorrect Answer&quot;,&quot;Incorrect Question&quot;],&quot;simulation&quot;:[&quot;Simulation Not Working&quot;,&quot;Incorrect Results/Observations&quot;,&quot;Insufficient/Incorrect Instructions&quot;],&quot;DEFAULT&quot;:[&quot;Page Not Loading&quot;,&quot;Content Not Visible&quot;,&quot;Incorrect Content&quot;]}" button_style="border: none; color: #fff; background-color: #288ec8; text-align: center; font-size: 1.05rem; border-radius: 1em;padding: 0.6em 1.2em; margin: 0 10px" position="override" custom_button_class="v-button"></bug-report>
+          </div>
+        </nav>
+      </header>
+      <div class="container-fluid flex-fill d-flex flex-column vlabs-page-main">
+        <div class="row d-flex justify-content-between">
+          <div class="flex-column">
+          <div class="row py-4 px-4 breadcrumbs">
+          	<div class="title is-4 tools">Tools</div>
+          	<span class="mx-2">
+          		<i aria-hidden="true" class="fa fa-angle-right"></i>
+          	</span>
+          	<a href="performance-report.html" class="my-2 mx-3" target="_blank">
+          		<button class="v-button">Performance Tool</button>
+          	</a>
+          	<a href="validator-report.html" class="my-2 mx-3" target="_blank">
+          		<button class="v-button">Validation Tool</button>
+          	</a>
+          </div>
+          </div>
+        </div>
+        <div class="row flex-grow-1 d-flex flex-nowrap flex-column flex-lg-row">
+          <div class="modal fade popupmenu" id="popupMenu" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                  <div class="modal-content">
+                      <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLabel">
+                              <a href="https://vlab.co.in" class="navbar-brand">
+                                  <img src="./assets/images/vlabs-color-small-moe.jpg" alt="vlabs logo" class="vlabs-logo">
+                              </a>
+                          </h5>
+                          <button type="button" class="btn-close align-self-center" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body nav-menu">
+                              <div>
+                                  <div class="d-flex nav-menu-body">
+                                      <a href="index.html" class="p-2 ">
+                                      Aim
+                                      </a>
+                                      
+                                  </div>
+                                  <div id="t-" class="collapse">
+                                      <div class="px-3 d-flex flex-column tasks align-items-center align-items-lg-start">
+                                      </div>
+                                  </div>
+                              </div>
+                              <div>
+                                  <div class="d-flex nav-menu-body">
+                                      <a href="theory.html" class="p-2  current-item ">
+                                      Theory
+                                      </a>
+                                      
+                                  </div>
+                                  <div id="t-" class="collapse">
+                                      <div class="px-3 d-flex flex-column tasks align-items-center align-items-lg-start">
+                                      </div>
+                                  </div>
+                              </div>
+                              <div>
+                                  <div class="d-flex nav-menu-body">
+                                      <a href="pretest.html" class="p-2 ">
+                                      Pretest
+                                      </a>
+                                      
+                                  </div>
+                                  <div id="t-" class="collapse">
+                                      <div class="px-3 d-flex flex-column tasks align-items-center align-items-lg-start">
+                                      </div>
+                                  </div>
+                              </div>
+                              <div>
+                                  <div class="d-flex nav-menu-body">
+                                      <a href="procedure.html" class="p-2 ">
+                                      Procedure
+                                      </a>
+                                      
+                                  </div>
+                                  <div id="t-" class="collapse">
+                                      <div class="px-3 d-flex flex-column tasks align-items-center align-items-lg-start">
+                                      </div>
+                                  </div>
+                              </div>
+                              <div>
+                                  <div class="d-flex nav-menu-body">
+                                      <a href="simulation.html" class="p-2 ">
+                                      Simulation
+                                      </a>
+                                      
+                                  </div>
+                                  <div id="t-" class="collapse">
+                                      <div class="px-3 d-flex flex-column tasks align-items-center align-items-lg-start">
+                                      </div>
+                                  </div>
+                              </div>
+                              <div>
+                                  <div class="d-flex nav-menu-body">
+                                      <a href="posttest.html" class="p-2 ">
+                                      Posttest
+                                      </a>
+                                      
+                                  </div>
+                                  <div id="t-" class="collapse">
+                                      <div class="px-3 d-flex flex-column tasks align-items-center align-items-lg-start">
+                                      </div>
+                                  </div>
+                              </div>
+                              <div>
+                                  <div class="d-flex nav-menu-body">
+                                      <a href="references.html" class="p-2 ">
+                                      References
+                                      </a>
+                                      
+                                  </div>
+                                  <div id="t-" class="collapse">
+                                      <div class="px-3 d-flex flex-column tasks align-items-center align-items-lg-start">
+                                      </div>
+                                  </div>
+                              </div>
+                              <div>
+                                  <div class="d-flex nav-menu-body">
+                                      <a href="contributors.html" class="p-2 ">
+                                      Contributors
+                                      </a>
+                                      
+                                  </div>
+                                  <div id="t-" class="collapse">
+                                      <div class="px-3 d-flex flex-column tasks align-items-center align-items-lg-start">
+                                      </div>
+                                  </div>
+                              </div>
+                              <div>
+                                  <div class="d-flex nav-menu-body">
+                                      <a href="feedback.html" class="p-2 ">
+                                      Feedback
+                                      </a>
+                                      
+                                  </div>
+                                  <div id="t-" class="collapse">
+                                      <div class="px-3 d-flex flex-column tasks align-items-center align-items-lg-start">
+                                      </div>
+                                  </div>
+                              </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <div class="nav flex-column sidebar nav-menu flex-shrink-0 px-lg-4 align-items-center align-items-lg-start hidden d-none d-lg-flex" id="menu">
+                <div>
+                    <div class="d-flex nav-menu-body">
+                        <a href="index.html" class="p-2 ">
+                        Aim
+                        </a>
+                        
+                    </div>
+                    <div id="t-" class="collapse">
+                        <div class="px-3 d-flex flex-column tasks align-items-center align-items-lg-start">
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="d-flex nav-menu-body">
+                        <a href="theory.html" class="p-2  current-item ">
+                        Theory
+                        </a>
+                        
+                    </div>
+                    <div id="t-" class="collapse">
+                        <div class="px-3 d-flex flex-column tasks align-items-center align-items-lg-start">
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="d-flex nav-menu-body">
+                        <a href="pretest.html" class="p-2 ">
+                        Pretest
+                        </a>
+                        
+                    </div>
+                    <div id="t-" class="collapse">
+                        <div class="px-3 d-flex flex-column tasks align-items-center align-items-lg-start">
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="d-flex nav-menu-body">
+                        <a href="procedure.html" class="p-2 ">
+                        Procedure
+                        </a>
+                        
+                    </div>
+                    <div id="t-" class="collapse">
+                        <div class="px-3 d-flex flex-column tasks align-items-center align-items-lg-start">
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="d-flex nav-menu-body">
+                        <a href="simulation.html" class="p-2 ">
+                        Simulation
+                        </a>
+                        
+                    </div>
+                    <div id="t-" class="collapse">
+                        <div class="px-3 d-flex flex-column tasks align-items-center align-items-lg-start">
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="d-flex nav-menu-body">
+                        <a href="posttest.html" class="p-2 ">
+                        Posttest
+                        </a>
+                        
+                    </div>
+                    <div id="t-" class="collapse">
+                        <div class="px-3 d-flex flex-column tasks align-items-center align-items-lg-start">
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="d-flex nav-menu-body">
+                        <a href="references.html" class="p-2 ">
+                        References
+                        </a>
+                        
+                    </div>
+                    <div id="t-" class="collapse">
+                        <div class="px-3 d-flex flex-column tasks align-items-center align-items-lg-start">
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="d-flex nav-menu-body">
+                        <a href="contributors.html" class="p-2 ">
+                        Contributors
+                        </a>
+                        
+                    </div>
+                    <div id="t-" class="collapse">
+                        <div class="px-3 d-flex flex-column tasks align-items-center align-items-lg-start">
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="d-flex nav-menu-body">
+                        <a href="feedback.html" class="p-2 ">
+                        Feedback
+                        </a>
+                        
+                    </div>
+                    <div id="t-" class="collapse">
+                        <div class="px-3 d-flex flex-column tasks align-items-center align-items-lg-start">
+                        </div>
+                    </div>
+                </div>
+          </div>          <div class="vlabs-page-content px-5 pb-4 flex-grow-1 markdown-body">
+            <div class="text-center fix-spacing">
+              <h2 id="zeeman-effect">Zeeman Effect</h2>
+          
+            </div>
+              <h3 id="theory">Theory</h3>
+          <p>The Zeeman effect is a phenomenon that occurs when a magnetic field (B) is applied to a material and splits the spectral lines of an atom or molecule. This splitting of spectral lines occurs due to the interaction of the magnetic field with the electrons of the atom or molecule. The theory behind the Zeeman effect is based on the interaction of the magnetic field with the magnetic moment () of the electrons. The magnetic moment of an electron is proportional to its angular momentum and is caused by the intrinsic angular momentum (spin) of the electron and its orbital angular momentum. In the presence of a magnetic field, the energy levels of the electrons are shifted due to the interaction of the magnetic field with the magnetic moment of the electrons. This interaction causes the energies of the electrons to split into two or more separate energy levels. The separation between the energy levels is proportional to the strength of the magnetic field. When the electrons in an atom or molecule transition between these energy levels, they emit or absorb light, resulting in the characteristic spectral lines of the atom or molecule. The presence of a magnetic field causes the spectral lines to split into several separate lines, which is known as the Zeeman effect.</p>
+          <p>The Zeeman effect has many applications in various fields, including atomic spectroscopy, magnetic resonance imaging (MRI), and the study of magnetic fields in stars and other astronomical objects.</p>
+          <p>The potential energy of orientation </p>
+          <center>
+          <img src="images/img1.png"> ....................(1)
+          </center>
+          <br>
+          <center>
+          <img src="images/img2.png">
+          </center>
+          <br>
+          <center>
+          <img src="images/img3.png">
+          </center>
+          <br>
+          <center>
+          <img src="images/img4.png">
+          </center>
+          Here, L<sub>1</sub>, L<sub>2</sub>,... are orbital angular momenta and S<sub>1</sub>,S<sub>2</sub>....are spin angular momenta of active electrons,  μ<sub>b</sub> = eh/2mc is Bohr Magneton, and g<sub>l</sub> and g<sub>s</sub> are orbital and spin g factors.
+          
+          <center>
+          
+          <p><img src="images/img5.png"> …………………. (2)</p>
+          </center>
+          
+          <p>Total magnetic moment of the atom is not antiparallel to its total angular momentum</p>
+          <center>
+          
+          <p><img src="images/img6.png"> ……………………… (3)</p>
+          </center>
+          
+          <p>μ processes about J with a precessional frequency which is proportional to the strength of the internal magnetic field of the atom. The result is that the average value of μ which is the component μ<sub>J</sub> of μ along the direction of J enters in Eq.1 for ∆E</p>
+          <center>
+          
+          <p><img src="images/img7.png"> …………………... (4)</p>
+          <p>The component μ<sub>J</sub> is given by</p>
+          <img src="images/img8.png">
+          </center>
+          <br>
+          <center>
+          <img src="images/img9.png">
+          </center>
+          <br>
+          <center>
+          <img src="images/img10.png">
+          </center>
+          <br>
+          <center>            
+          <img src="images/img11.png">
+          </center>
+          <br>
+          <center>
+          <img src="images/img12.png"> …………………… (5)
+          </center>
+          
+          <p>As <img src="images/img13.png"></p>
+          <p>The factor g<sub>lsj</sub> is called Lande’s g-factor and is given by </p>
+          <center>
+          <img src="images/img14.png">
+          </center>
+          <br>
+          <center>
+          <img src="images/img15.png">………… (6)
+          </center>
+          
+          <p>Where l, s, and j are respectively the values of orbital, spin and total angular momenta in the state characterized by L, S, and J.</p>
+          <p>The potential energy of interaction in an external magnetic field B is now given by</p>
+          <center>
+          <img src="images/img16.png">
+          </center>
+          <br>
+          <center>
+          <img src="images/img17.png">
+          </center>
+          <br>
+          <center>
+          <img src="images/img18.png"> ………………..(7)
+          </center>
+          taking along z-axis along B and Jz = mj ℏ
+          
+          <p>thus an energy level characterized by L, S, and J will get split up into (2j+1) sub levels corresponding to mj=-j , -(j-1),-(j-2)........,(j-1),j with energy separation between the adjacent sublevels given by μ<sub>b</sub>g<sub>lsj</sub>B</p>
+          <p>An optical transition can take place between any two levels provided</p>
+          <center>
+          <img src="images/img19.png">
+          </center>
+          <br>
+          <center>
+          <img src="images/img20.png">
+          </center>
+          <br>
+          <center>
+          <img src="images/img21.png">
+          </center>
+          
+          <p>Let us consider the transition corresponding to the 546.1 nm prominent green line of mercury spectrum with which we are concerned here. This line arises from a transition between the 3<sub>S<sub>1</sub></sub>(6s7s) state to 3<sub>p<sub>2</sub></sub>(6s6p) state.</p>
+          <center>
+          <img src="images/fig1.png">
+          
+          <p>Figure 1: Structure of Zeeeman multiplet arising in a transition from 3<sub>S<sub>1</sub></sub>to 3<sub>p</sub> level; the mercury green line at 5461A is an example of such a transition.</p>
+          </center>
+          
+          <p>Figure.1 shows the energy diagram for these two states without and with a magnetic field. The upper level gets split into three corresponding to m<sub>j</sub>=1,0, -1, and the lower into five corresponding to m<sub>j</sub>= 2,1,0,-1 and -2. The g-factors for the upper and lower states are</p>
+          <center>
+          
+          <p>3<sub>S<sub>1</sub></sub>(J=1, L=0, S=1)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;g=2</p>
+          <p>3<sub>P<sub>2</sub></sub>(J=2, L=1, S=1)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;g=3/2</p>
+          </center>
+          
+          <p>As shown in Figure.1, in the presence of the magnetic field, the 546.1 nm line gives rise to nine components. This is because of different g-factors for the initial and final states. This is a case of the anomalous Zeeman effect.</p>
+          <p>When viewed in the transverse geometry, (i) the first group where ∆m<sub>j</sub>=-1 gives <img src="images/sigma.png">- lines whose light is polarized perpendicular to the magnetic field, (ii) the middle group where ∆m<sub>j</sub>=0 gives <img src="images/pi.png">-lines whose light is polarized parallel to the direction of the field and (iii) the last group where ∆m<sub>j</sub>=1 gives <img src="images/sigma.png">– lines whose light is again polarized perpendicular to the magnetic field.</p>
+          <p>In the longitudinal geometry where the light beam is along the direction of the magnetic field, the beam corresponding to <img src="images/pi.png">-lines (has electric vector along the direction of the magnetic field) cannot travel as light waves are transverse electromagnetic waves. The beam corresponding to <img src="images/pi.png">-lines is therefore not observed. The beam corresponding to six  <img src="images/sigma.png">– lines is circularly polarized when viewed in the longitudinal direction, the three components corresponding to ∆m<sub>j</sub>=1 as left circularly polarized.The shift in frequencies of these nine lines is in the lower part of Figure 1 in units of  μ<sub>b</sub>/h. We are interested in the three <img src="images/pi.png">-lines for the measurement of Bohr magneton and use transverse geometry. These are picked up by a polarizer whose pass direction is kept parallel to the direction of the magnetic field. The <img src="images/sigma.png">– lines which are polarized perpendicular to the magnetic field get blocked. The frequencies of these three <img src="images/pi.png">-lines are</p>
+          <center>
+          
+          <p><img src="images/img22.png"> ------------(8)</p>
+          </center>
+          
+          <p>This frequency shift ∆υ= μ<sub>b</sub>B/2h= eB/8πm is measured in this experiment. As this is very small, a high-resolution device, a Fabry Perot etalon, based on multiple beam interferometry is used. The Fabry Perot etalon consists of two optically flat (to within 20 nm) glass plates coated on the inner surface with a partially transmitting metallic layer (reflection coefficient 0.95) (Figure 2). </p>
+          <center>
+          <img src="images/fig2.png">
+          
+          <p>Figure 2:  reflected and transmitted rays at the two parallel surfaces (1) and (2) of a Fabry Perot etalon. The etalon spacing is t.</p>
+          </center>
+          
+          <p>The outer surface is slightly inclined (about 0.1<sup>0</sup>) with respect to the inner one, to avoid multiple reflections. The plates are arranged in a holder and held apart (with spacing t) by three very accurately machined spacers. Three spring-mounted screws are used to apply pressure, and by careful adjustment, the plates are made parallel. </p>
+          <p>An almost parallel beam from an extended source at the focus of a lens falls on the etalon. The emerging parallel rays B. D. F, etc, are brought to focus by the use of a good quality lens of focal length f, as shown in Figure 3.</p>
+          <center>
+          <img src="images/fig3.png">
+          
+          <p>Figure 3: Focusing the light emerging from a Fabry Perot etalon. Light entering the etalon at an angle  is focused onto a ring of the radius fθ where f is the focal length of the lens.</p>
+          </center>
+          
+          <p>Light entering the etalon at an angle θ is focused onto a ring of radius fθ. When θ satisfies the condition,</p>
+          <center>
+          <img src="images/img23.png">
+          </center>
+          With n an integer, a bright ring will appear in the focal plane with the radius being given by
+          <center>
+          <img src="images/img24.png">
+          </center>
+          The order n, corresponding to the interference at the center is 2t/λ.n<sub>0</sub> is in general not an integer.
+          
+          <p>Now </p>
+          <center>
+          <img src="images/img25.png">
+          </center>
+          since θn is small.This leads to
+          <center>
+          <img src="images/img26.png">
+          </center>
+          And
+          <center>
+          <img src="images/img27.png"> --------------(9)
+          </center>
+          
+          <p>The order of the first bright ring counting from the center is less than n<sub>0</sub>, since n<sub>1</sub>=n<sub>0</sub>cos θ<sub>1</sub>. </p>
+          <p>Let us take n<sub>1</sub> = n<sub>0</sub> – ε with fractional order ε lying between zero and one. In general, for the p<sup>th</sup> ring of the pattern as measured from the center.</p>
+          <center>
+          <img src="images/img28.png">
+          </center> 
+          Or
+          <center>
+          <img src="images/img29.png">----------(10)
+          </center>
+          
+          <p> From Eqs. (9) and (10) we obtain for the square of the radius of the p<sup>th</sup> ring </p>
+          <center>
+          <img src="images/img30.png">----------(11)
+          </center>
+          
+          <p>and the difference between the squares of the radii of adjacent rings</p>
+          <center>
+          <img src="images/img31.png">----------(12)
+          </center>
+          
+          <p>This difference is constant. The squares of the radii of successive rings are linearly related and form an arithmetic progression.</p>
+          <p>Now if there are two components of a spectral line (in the present experiment, we have three components) with wavelengths λ<sub>a</sub>and λ<sub>b</sub> very close to one another, their fractional orders at the center will be given by</p>
+          <center>
+          <img src="images/img32.png">
+          </center>
+          <br>
+          <center>
+          <img src="images/img33.png">
+          </center>
+          
+          <p>Here, <img src="images/vecVa.png"> and <img src="images/vecVb.png"> are wave numbers, and n<sub>1</sub>(a) and n<sub>1</sub>(b) are orders of the first rings. As the wavelengths are very close, n<sub>1</sub>(a)= n<sub>1</sub>(b). The difference in wave numbers between the two components is, therefore:</p>
+          <center>
+          <img src="images/img34.png">----------(13)
+          </center>
+          
+          <p>The fractional order  can be obtained using Eq. (11)</p>
+          <center>
+          <img src="images/img35.png">----------(14)
+          </center>
+          Consider a line which has three components (as in the present experiment) a, b, c, and let the respective radii be r<sub>1a</sub>, r<sub>2a</sub>, r<sub>3a</sub>, ...., for component a; r<sub>1b</sub>, r<sub>2b</sub>, r<sub>3b</sub>, ....,  for component b and similarly for component c. From Eq. (12), it is clear that the difference between the squares of the radii of any two adjacent rings of component a
+          <center>
+          <img src="images/img36.png">
+          </center>
+          <br>
+          <center>
+          <img src="images/img37.png">
+          </center>
+          
+          <p>is equal (to within a very small amount) to the similar difference for component b or any other component of the same line. We shall take the average of these. Let these differences be designated by A. Eq.(14) now leads to</p>
+          <center>
+          <img src="images/img38.png">
+          </center>
+          <br>
+          <center>
+          <img src="images/img39.png">
+          </center>
+          <br>
+          <center>
+          <img src="images/img40.png">
+          </center>
+          
+          <p>and the required separation (in wave numbers) between the two components, a and b, using Eq.(13), is given by</p>
+          <center>
+          <img src="images/img41.png">----------(15)
+          </center>
+          
+          <p>The difference <img src="images/delta.png"> between the squares of the radii of the p<sup>th</sup> rings of components a and b is found to be independent of p. We shall take the average of these. Let these be designated by δ. The required separation between the two components is finally given by</p>
+          <center>
+          <img src="images/img42.png">----------(16)
+          </center>
+          
+          <p>As the result depends on the ratio of δ<sub>ab</sub>/∆, the dimensions used in measuring the radii of the ring system or the amplification of the interference pattern do not matter. Using this wave number separation in Eq. 8 for the Zeeman line splitting, we get</p>
+          <center>
+          <img src="images/img43.png">
+          </center>
+          or
+          <center>
+          <img src="images/img44.png">----------(16)
+          </center>
+          Average values of ∆ and δ are required.
+          </div>
+          <div class="bug-report-mobile">
+              <bug-report id="bug-report" title="[BUG REPORT] ZEEMAN EFFECT" page-type="text" context-info="{&quot;organisation&quot;:&quot;Virtual Labs&quot;,&quot;developer_institute&quot;:&quot;NITK&quot;,&quot;expname&quot;:&quot;ZEEMAN EFFECT&quot;,&quot;labname&quot;:&quot;Virtual Lab&quot;,&quot;phase&quot;:&quot;Testing&quot;}" checkbox-json="{&quot;text&quot;:[&quot;Insufficient Content&quot;],&quot;video&quot;:[&quot;Insufficient Content&quot;],&quot;assesment&quot;:[&quot;Incorrect Options&quot;,&quot;Incorrect Answer&quot;,&quot;Incorrect Question&quot;],&quot;assessment&quot;:[&quot;Incorrect Options&quot;,&quot;Incorrect Answer&quot;,&quot;Incorrect Question&quot;],&quot;simulation&quot;:[&quot;Simulation Not Working&quot;,&quot;Incorrect Results/Observations&quot;,&quot;Insufficient/Incorrect Instructions&quot;],&quot;DEFAULT&quot;:[&quot;Page Not Loading&quot;,&quot;Content Not Visible&quot;,&quot;Incorrect Content&quot;]}" position="override" button_style="
+                          position: fixed; 
+                          bottom: 20px;
+                          right: 20px;
+                          z-index: 1;
+                          font-size: 0;
+                          padding: 25px;
+                          border-radius: 50%;
+                          border: none;
+                          background-color: #0fc0ff;
+                          background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC0AAAAtCAYAAAA6GuKaAAAAAXNSR0IArs4c6QAABiFJREFUaEPFmVuMFEUUhv/TM7uwoBGVyG22u7ZnYGG5REETo8RA1BhFIka8ABFf0PCgDxhFEpCLqAlE1OiTiSj4gFGjD0QBETQaEqPRICALSHdPV+8YQQJBA+wuO1PHdMNcWGame2ZWqMfuc/nq1KlT1acJAzhShjFVAUsYdL8G3HjRdA7gHwna5uahLR91dnaeb9QlNWrA1+/o6GjuPnv2DQ30LICKNhk4qLF63PK8g434rejATJhjKa6m9WazOzOZzKlKTmYAcc8QnxEwJwqIAk5STpvpZJwD1eTHjR43PKflhtkZ2+ovVxbaTJiTSVM/gzCYGIebu4fc1nmi80w5J0nDWA7Qq1GACzLMR3pV7pZMJtNdTs/UzelE6msAQ0BYb7vuS6VyZaGTungGhPfygkRYZ7nusv4OEonEDc2xuEfA0JqgATBhieO6b/fXE0IM1pgPECgVvGP+x/bksFDo1JhUguPZI8FMAz0+zzFtSjqd9p8VRlJvew7E79QKHNgEDjrSndRfNyXEGmasLK4KttmeOysU2hdIGm0vA/xKUZh32VLeW6psCrGMmO+uB5qIeEh398P7jx8/m9cP9pGm9vtpmQ9WjHDzUSkPRYJOpVKDuK9vP0Dj8goMfsSR8ot6IKPoJI22XUBpEHitLWUx6heNVC15pmHMItCXBYeKPUZsLlFWVYNQsVg2nU7v82XaW1tHZ4lGhUEztOlEKOQ4A/b5XHZyuc0aWqdNIbYSY3aY00veM/9te3KE/ywlxGpmrKpJP8h5ftCR8qtyeqHQY3XdVNAO5vMskvMGoRWrT9Ke90QlX6HQF6N16Y4OI28Ampn/jatcxx+ZzJ8NQScSiZZBWvzJwAhhJoCKUQhkaoVmnAZoJcC9WowOH02nf6gWl0iRLpQk3ZwOym0n0DVVg10rNAAF7Ig1xedYltUbtpCRoZO6Po1J+z7S6VcHdLCIClusLnfBgED7NVv1ZX8lYGKYwbrSo8Qogxc4Um5pOD1Mo20DgZ+PBFxPTpcYJuBUljDRdd1jdW/EcYnEmKwWSxNR05WADnwo2mB3pV+oGzopxDowlkYGbjDSF9ILpwd1D2mtdB2uuhEv3D+yfwG4/opCB5WVnrZk+v1yfqtCJ3X9TpC2pybggYj0BYcf29KdXwe0WArCuqsCzSxtT4qq0GareStIXXo3JjxGwNSrAh0crMFFq3jYEJ9wpPygkB6mYZwg0PCaAcsp1Hm4RPFtS5eK0LpxvqayVs3DlYIO7r0K8xUhlufRGKNrupLmFQcImsEZBhWaOxq4y5ZyRvXqIcSnYDwaZdkukRkgaGqK32RZ1on+/qt/buliFRFWXxXokonXBJ3S22Yz8darAc2sdjqed1/NddpvnMQUHwPRdTWBD0R6EBbbrltoGJX6D71PJ3V9E0h76kpCMzirNTWNLpfPPkcodNDXi6m9QLGqhE6gwUgzaKMj04sq+QmF9hVrjnYj0IwejmvtjuN4DUEbhjEqztgLoqCXEToagQavsKV8rZqPSJH2DaSEmMGMXZHSpE5oZnzneK7fL8w1DJ1sTU6CltvEwPj/88OWwRYx77Y9b3HD0KYuvqUL/Y5oo85I542TooesrnTF8yE0PUwh5hGj6tfxZTNpEBqKvUE9QyfW9bnV3t5+bV9P7yECxuTBFGOvRn5v5eJgTLzsUhUFmuGCcLJoBiNL/ZT7bVFYiWrrnTSM9QC9WBSmzy2ZnluqI4QYGQcWM/O8Qi+7EjSjB4xtTNqHjuf4HVHO20q1tiZZi/k/j1r8Z8zcRxyfanfZv/dnrJgeYw1jQo6xr+SOfY5j2oRq9VMIIWLA7QSMslz3raDGG8ZMJhoPpR1QmvrFdd2eSoFKGm0rAF5bfM97bCnvKp2c/64idFLXd4C0woWFwMstKV+PthPrk/L/R/aeOfcbCBOKq8uLLCk3llos/0tON+8hUt+U5O1Rao5PjtIcrA+3qOWvDEC78wFlIO1I1wyFTuptC0G8uWSZHrCl3N4oUFT9NiE2a4yFQW6DLUfKsaHQU0aMGHq2pWULM98Bpncdzy35yxXVdf1yftXK9vS8CUVjtBjWHHXdn0qt/Qf/x1JblU8EiAAAAABJRU5ErkJggg==);
+                          background-repeat: no-repeat;
+                          background-position: center;
+                          background-size: 30px;
+                          filter: invert(1);">
+              </bug-report>
+          </div>        </div>
+      </div>
+      <footer class="text-light pt-2 vlabs-footer d-flex flex-column">
+        <div class="row px-5 mx-0">
+          <div class="col d-flex flex-column">
+            <span class="font-weight-bold vlabs-footer-sect-name pb-2 mb-3">Community Links</span>
+            <a href="https://www.sakshat.ac.in/" class="text-light">Sakshat Portal</a>
+            <a href="http://outreach.vlabs.ac.in/" class="text-light">Outreach Portal</a>
+            <a href="https://vlab.co.in/faq" class="text-light">FAQ: Virtual Labs</a>
+          </div>
+          <div class="col d-flex flex-column">
+            <span class="font-weight-bold vlabs-footer-sect-name pb-2 mb-3">Contact Us</span>
+            <span> Phone: General Information: 011-26582050 </span>
+            <span> Email: support@vlabs.ac.in </span>
+          </div>
+          <div class="col d-flex flex-column">
+            <span class="font-weight-bold vlabs-footer-sect-name pb-2 mb-3">Follow Us</span>
+            <div class="social-links">
+      	<a class="p-2 mt-1 mr-2 d-inline-flex justify-content-center align-items-center" style="background: #55acee;" href="https://twitter.com/TheVirtualLabs">
+      	  <i class="fab fa-twitter"></i>
+      	</a>
+      	<a class="p-2 mt-1 mr-2 d-inline-flex justify-content-center align-items-center" style="background: #3b5998;" href="https://www.facebook.com/Virtual-Labs-IIT-Delhi-301510159983871/">
+      	  <i class="fab fa-facebook"></i>
+      	</a>
+      	<a class="p-2 mt-1 mr-2 d-inline-flex justify-content-center align-items-center" style="background: #e52d27;" href="https://www.youtube.com/watch?v=asxRaOgk6a0">
+      	  <i class="fab fa-youtube"></i>
+      	</a>
+      	<a class="p-2 mt-1 mr-2 d-inline-flex justify-content-center align-items-center" style="background: #2867B2;" href="https://in.linkedin.com/in/virtual-labs-008ba9136">
+      	  <i class="fab fa-linkedin"></i>
+      	</a>
+            </div>
+          </div>
+        </div>
+        <div class="m-0 py-2 text-center" style="font-family: &quot;Open Sans&quot;, sans-serif; background: #212121;">
+          <a class="text-primary font-weight-bold" href="https://www.gnu.org/licenses/agpl-3.0.en.html"> AGPL 3.0 </a>
+          &nbsp;&amp;&nbsp;
+          <a class="text-primary font-weight-bold" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"> Creative Commons (CC BY-NC-SA 4.0) </a>
+        </div>
+      </footer>
+    <script src="./assets/js/toggleSidebar.js"></script>
+    <script src="./assets/js/event-handler.js"></script>
+
+
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+            navigator.serviceWorker.register("sw.js");
+        });
+      }
+    </script>
+  
+
+<script type="module" src="https://cdn.vlabs.ac.in/bug-report/vlabs-bug-report.js"></script><script type="module" src="/exp-zeeman-effect-nitk/plugins/svc-rating/index.js"></script><script type="module" src="/exp-zeeman-effect-nitk/plugins/svc-rating/config.js"></script><script type="module" src="https://apis.google.com/js/api.js"></script></body></html>

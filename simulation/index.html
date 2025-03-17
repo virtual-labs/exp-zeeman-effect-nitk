@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Solve</title>
+    
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link
+      rel="stylesheet"
+      href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css"
+    />
+    <link rel="stylesheet" href="css/general.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/query.css" />
+    <!-- <script defer src="https://code.jquery.com/jquery.min.js"></script> -->
+    <script
+      defer
+      src="https://code.jquery.com/jquery-3.7.0.min.js"
+      integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="
+      crossorigin="anonymous"
+    ></script>
+    <script src='https://cdn.plot.ly/plotly-2.12.1.min.js'></script>
+    <title>Virtual Lab</title>
+    <script src='https://cdn.plot.ly/plotly-2.18.2.min.js'></script>
+    <script
+      defer
+      src="https://code.jquery.com/ui/1.8.17/jquery-ui.min.js"
+    ></script>
+    <script defer src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script defer src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script
+      defer
+      type="text/javascript"
+      src="//cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"
+    ></script>
+
+  </head>
+  <body>
+    <div class="title-div-container">
+    <div class="title-div">
+    <div class="logo-div">
+    <a href="#"><img src="images/logo_nitk.png" alt="Logo" class="logo" /></a></div>
+    <h1>Zeeman-Effect</h1>
+  </div>
+      </div>
+    <div class="container">
+      <div class="sidebar">
+        <ul class="tool-menu">
+          <li class="tool-list tool-objective" onclick="displayDiv(this)">
+            <a class="tool-link" title="Objective"
+              >
+              <img src="./images/objective.png" alt="Objective" class="icons">
+            </a>
+            <span>Objective</span>
+          </li>
+          <li class="tool-list tool-apparatus" onclick="displayDiv(this)">
+            <a class="tool-link" title="Apparatus"
+              ><img src="./images/apparatus.png" alt="Objective" class="icons"></a
+              >
+              <span>Apparatus</span>
+          </li>
+          
+          <li class="tool-list tool-practice" onclick="displayDiv(this)">
+            <a class="tool-link" title="Experiment"
+              ><img src="./images/solution.png" alt="solution" class="icons"
+              ></a
+              >
+              <span>Experiment</span>
+          </li>
+          <li class="tool-list tool-help" onclick="displayDiv(this)" >
+            <a class="tool-link" title="Help" onclick="help()"
+              ><img src="./images/help1.png" alt="Help" class="icons"
+              ></a
+              >
+              <span>Help</span>
+          </li>
+          <li class="tool-list">
+            <a href="#" class="tool-link" id="refreshLink" title="Refresh">
+              <img id="reset" type="reset" onclick="Refresh()" style="height: 39px;" src="images/bluecwdull.svg" alt="Refresh Button" />
+            </a>
+            <span class="refresh">Reset</span>
+          </li>
+          
+
+        </ul>
+        
+      </div> 
+      <div class="main">
+        <div class="main-section">
+          <div id="simulation" class="main__task-div">
+            <h3 class="task-title">Objective</h3>
+           
+            <div class="canvas__div">
+              <div class="task-screen objective">
+                <!-- <h3 class="objective__title">Objective</h3> -->
+                  <ol class="objective__main">
+                    <p>To observe Zeeman effect and to calculate Bohr magneton.</p>
+                  <!-- <li>&ensp;To calculate the Hall coefficient and the carrier concentration of the sample material. -->
+                  </li>
+              </ol>
+
+              </div>
+              <div class="task-screen apparatus hide">
+                <!-- <h3 class="apparatus__title">Apparatus</h3> -->
+                <p>Optical rail, Electromagnet, Mercury discharge tube, Polarizer, Fabry Perot etalon, Telescope with focusing lens, CCD Camera, Constant current supply, digital Gauss meter, Zeeman effect power supply, TV monitor, Micrometer.
+                </p>
+                <div class="apparatus-screen">
+                  <div class="apparatus-tool">
+                    <img src="images/ammeter.png" alt="constantpowersupply" class="tool-img diode">
+                    <span>Constant Current Supply</span>
+                  </div>
+                  <div class="apparatus-tool">
+                    <img src="images/zemanpwrsply.png" alt="zeemanpowersupply"class="tool-img capacitor">
+                    <span>Zeeman effect power supply</span>
+                  </div>
+                  <div class="apparatus-tool">
+                    <img  src="images/gauss.png" alt="gauss" class="tool-img resistor">
+                    <span>Digital Gauss Meter</span>
+                  </div>
+                  <div class="apparatus-tool">
+                    <img src="images/zeemanset.png" alt="gauss" class="tool-img opamp">
+                    <span>Zeeman setup</span>
+                  </div>
+                  <div class="apparatus-tool">
+                    <img src="images/probe1.png" alt="hallsensor"class="tool-img scope">
+                    <span>Hall Probe</span>
+                  </div>
+                  <div class="apparatus-tool">
+                    <img src="images/mercurytube.png" alt="hallsensor" class="tool-img board">
+                    <span>Mercury Discharge Tube</span>
+                  </div>
+                </div>
+               
+              </div>
+           
+              <div class="task-screen practice hide">
+
+
+
+                <label for="procedure" class="procedure-title">Choose the procedure:</label>
+
+                <div class="procedure">
+                  <div class="radio-container">
+                    <div class="radio-option">
+                      <input type="radio" id="exp1" name="exp" value="mfield vs current">
+                      <label for="exp1">Magnetic Field vs Current</label><br><br>
+                    </div>
+                    <div class="radio-option">
+                      <input type="radio" id="exp2" name="exp" value="Zeeman Effect">
+                      <label for="exp2">Zeeman Effect</label>
+                    </div>
+                  </div>
+                  
+                  <!-- OK Button -->
+                  <div class="ok-button-container">
+                    <button type="button" class="ok-button" onclick="update()">OK</button>
+                  </div>
+                </div>
+              
+                
+                <p id="add"style="display:none;position: absolute;
+                top: 1%;
+                left: 41%;">Added Successfully!</p>
+                <div class="mainsimulation" id="mainsimulation">
+                  
+                  <!-- <span id="voltagevalue" style="display:none ;"></span> -->
+                 
+                  <div class="cont1">
+                  <img class="circuit" id="circuit1" src="images/circuit1.1.png" alt="circuit1" style="display:none ;">
+                  <img class="circuit" id="circuit2" src="images/circuit2.png" alt="circuit2" style="display:none ;">
+                  <span id="fieldvalue" style="display:none ; "></span>
+                  <img id="probe" src="images/probe.png" alt="probe" >
+                  <img id="wire" src="images/wire.png" alt="wire">
+                  <span id="cvalue"></span>
+                  <div id="zeeeman-box" style="position: relative;width: inherit; height: 440px; display: none;">
+              
+                 <div id="image_container" style="position: relative; height: auto; width: 100%;">
+                  <img id="zmnpwrsuply" src="images/zemanpwrsply.png" alt="zeemanpowersupply" class="zmnpwrsuply" title="Zeeman Power Supply">
+                  <img id="crntpwrsuply" src="images/constpwrsply.png" alt="constantpowersupply" class="crntpwrsuply" title="Constant Power Supply">
+                  <img id="connection2" src="images/connection.png" alt="connectionwire" class="connection2">
+                  <img id="connection3" src="images/monitorwire.png" alt="monitorconnectionwire" class="connection3">
+                  <img id="stand" src="images/stand.png" alt="stand" class="stand" title="Optical rail with Electromagnet">
+                  <img id="ccdcamera" src="images/ccdcamera.png" alt="ccdcamera" class="ccdcamera" title="CCD Camera" />
+                  <img id="telescope" src="images/telescope1.png" alt="Telescope with focusing lens" class="telescope" title="Telescope with focusing lens">
+                  <img id="polariser" src="images/polariser.png" alt="polariser" class="polariser" title="Polariser">
+                <img id="etalon" src="images/etalon.png" alt="etalon" class="etalon" title="Fabry Perot etalon">
+                <img id="mercurytube" src="images/mercurytube1.png" alt="mercurytube" title="Mercury Tube">
+                <img id="elemagnet" src="images/electromagnet.png" alt="electromagnet" title="Electromagnet">
+                <img id="mertube" src="images/mercurytube.png" alt="mercurytube"  title="Mercury Discharge Tube">
+                <img id="circle1" src="images/circle1.png" alt="rings" >
+                <img id="circle2" src="images/circle2.png" alt="splitrings">
+                <img id="monitor" src="images/screen.png" alt="monitor" title="TV monitor">
+               
+                <img id="connection" src="images/connection.png" alt="connectionwire" />
+                <!-- <span id="voltagevalue" style="display:none ;"></span> -->
+                <span id="fieldvalue"></span>
+               
+                <img id="hand1" class="hands" src="images/hand.png" alt="hand">
+                <img id="hand" class="hands" src="images/hand.png" alt="hand">
+                <div id="paper"></div>
+                <div id="paper2"></div>
+                <img id="reading1" src="images/reading1.png" alt="reading1">
+                <img id="reading2" src="images/reading2.png" alt="reading2">
+                <img id="reading3" src="images/reading3.png" alt="reading3">
+                <img id="reading4" src="images/reading4.png" alt="reading4">
+                <img id="reading5" src="images/reading5.png" alt="reading5">
+                <img id="reading6" src="images/reading6.png" alt="reading6">
+                <img id="reading7" src="images/reading7.png" alt="reading7">
+                <img id="reading8" src="images/reading8.png" alt="reading8">
+                <img id="reading9" src="images/reading9.png" alt="reading9">
+                <img id="reading10" src="images/reading10.png" alt="reading10">
+                <img id="reading11" src="images/reading11.png" alt="reading11">
+                <img id="reading12" src="images/reading12.png" alt="reading12">
+                <img id="reading13" src="images/reading13.png" alt="reading13">
+
+                <p id="readingi"  class="reading">R<sub>i</sub> = <span id="ireading" ></span></p>
+                <p id="readings" class="reading">R<sub>s</sub> = <span id="sreading"></span></p>
+                <span id="note" >
+                <p id="text">
+                Note:- Apply the maximum magnetic field to observe the splitting of spectral lines.</p>
+                <input type="button" style="cursor: pointer; border-radius: 5px; margin: auto;display: flex;" id="ok" value="OK" onclick="note()" /></span>
+                  <div id="myDiv"></div>
+                </div>
+                </div>
+                  </div>
+              </div>
+              <div id="IBgraph">
+                <div id="myChart"></div>
+                <button id="close1" onclick="closeobservation()"><span>&times;</span></button>
+            </div>
+            
+                
+            </div>
+            <div id="instructions" style="display: none;">
+              <div class="icontent">
+                  <h4 id="instruct">Instructions</h4>
+                  
+              <ol>
+                <li>
+                  Select the "Magnetic Field vs Current" procedure from 'Select
+                  Procedure' dropdown menu.
+                </li>
+                <li>
+                  Click on the 'Insert Hall probe' button to insert the probe
+                  into the electromagnet.The distance between electromagnet
+                  should be 1 cm.
+                </li>
+                <li>
+                  Click on the 'Add to Table' button to add current and magnetic
+                  field values to the table.
+                </li>
+                <li>Click on the 'Observation' button to view the table.</li>
+                <li>Click on the 'plot graph' button to view the graph.</li>
+                <li>
+                  Change the procedure to "Zeeman Effect" to calculate the Bohr
+                  magneton.
+                </li>
+                <li>
+                  Click on the 'Insert mercury tube' button to insert the
+                  mercury discharge tube into the electromagnet.
+                </li>
+                <li>
+                  Place the optical rail near the electromagnet. Place the
+                  converging lens, polarizer, Fabry Perot etalon (fix the
+                  thickness of air gap of etalon t= 4mm),telescope with
+                  focussing lens, and CCD camera on the rail.
+                </li>
+                <li>
+                  Connect the CCD camera to the Monitor and observe the
+                  concentric circular rings.
+                </li>
+                <li>
+                  Apply the maximum magnetic field and observe the splitting of
+                  spectral lines.
+                </li>
+                <li>
+                  Set the centre of the specified line at the cross section as
+                  marked on the display.
+                </li>
+                <li>
+                  Bring the inner most splitting of the first spectrum line at
+                  the cross section and note down the micrometre reading. This
+                  position is Ri
+                </li>
+                <li>
+                  Now move the micrometre to adjust the second spectral
+                  splitting of the first line at the cross wire and note its
+                  reading
+                </li>
+                <li>
+                  Similarly take readings of splitting in different spectral
+                  lines.
+                </li>
+                <li>
+                  After getting the values of ,Calculate Bohr magneton using the
+                  relation. Where, h ⟹ Plank’s constant, B⟹ Magnetic field, c⟹
+                  velocity of light, t⟹ thickness of air gap for etalon =4mm.
+                </li>
+              </ol>
+            
+              </div>
+              <!-- <button type="button" onclick="closeobservation()">Close</button> -->
+          </div>
+
+        <div class="observations" id="observation">
+          <div class="tablesdiv" id="tablediv">
+              <table class="observationTable" id="observationTable">
+                  <tr>
+                      <td colspan="5">Thickness of air gap for Etalon t = 4mm or 0.4cm<br>Magnetic Field H = 9.95 KGauss<br>Micrometer initial reading R<sub>i</sub> = 2.07mm</td>
+                  </tr>
+                  <tr>
+                      <th>No. of spectral lines</th>
+                      <th>splitting of spectral lines</th>
+                      <th>split position R<sub>s</sub>(mm)</th>
+                      <th>Actual Radians R = R<sub>s</sub> - R<sub>i</sub>(mm)</th>
+                      <th>R<sup>2</sup>  (mm)<sup>2</sup></th>
+                  </tr>
+                  <tr>
+                      <td rowspan="3">1</td>
+                      <td>a</td>
+                      <td>3.18</td>
+                      <td>1.11</td>
+                      <td>1.232</td>
+                  </tr>
+                  <tr>
+                      <td>b</td>
+                      <td>3.44</td>
+                      <td>1.37</td>
+                      <td>1.877</td>
+                  </tr>
+                  <tr>
+                      <td>c</td>
+                      <td>3.67</td>
+                      <td>1.60</td>
+                      <td>2.561</td>
+                  </tr>
+                  <tr>
+                      <td rowspan="3">2</td>
+                      <td>a</td>
+                      <td>4.15</td>
+                      <td>2.08</td>
+                      <td>4.326</td>
+                  </tr>
+                  <tr>
+                      <td>b</td>
+                      <td>4.31</td>
+                      <td>2.24</td>
+                      <td>5.018</td>
+                  </tr>
+                  <tr>
+                      <td>c</td>
+                      <td>4.40</td>
+                      <td>2.33</td>
+                      <td>5.429</td>
+                  </tr>
+                  <tr>
+                      <td rowspan="3">3</td>
+                      <td>a</td>
+                      <td>4.74</td>
+                      <td>2.67</td>
+                      <td>7.136</td>
+                  </tr>
+                  <tr>
+                      <td>b</td>
+                      <td>4.89</td>
+                      <td>2.82</td>
+                      <td>7.952</td>
+                  </tr>
+                  <tr>
+                      <td>c</td>
+                      <td>4.99</td>
+                      <td>2.92</td>
+                      <td>8.526</td>
+                  </tr>
+                  <tr>
+                      <td rowspan="3">4</td>
+                      <td>a</td>
+                      <td>5.30</td>
+                      <td>3.23</td>
+                      <td>10.433</td>
+                  </tr>
+                  <tr>
+                      <td>b</td>
+                      <td>5.39</td>
+                      <td>3.32</td>
+                      <td>11.023</td>
+                  </tr>
+                  <tr>
+                      <td>c</td>
+                      <td>5.45</td>
+                      <td>3.38</td>
+                      <td>11.425</td>
+                  </tr>
+              </table>
+          </div>
+          <div class="tableObservations" id="tableObservation">
+              <button type="button" onclick="closeobservation()">Close</button>
+              <button type="button" onclick="table2()" style="width: 100px;">Calculations</button>
+          </div>
+      </div>
+      <div class="observation2" id="observation2">
+          <div class="tablediv" id="tablediv2">
+              <table class="observationTable2" id="observationTable2">
+                  <tr>
+                      <th rowspan="2">Component</th>
+                      <th rowspan="2">Ring Number</th>
+                      <th>1</th>
+                      <th></th>
+                      <th>2</th>
+                      <th>3</th>
+                      <th></th>
+                      <th>4</th>
+                  </tr>
+                  <tr>
+                      <th></th>
+                      <th>&Delta;<sub>12</sub></th>
+                      <th></th>
+                      <th></th>
+                      <th>&Delta;<sub>34</sub></th>
+                      <th></th>
+                  </tr>
+                  <tr>
+                      <td>a</td>
+                      <td></td>
+                      <td></td>
+                      <td>3.094</td>
+                      <td></td>
+                      <td></td>
+                      <td>3.297</td>
+                      <td></td>
+                  </tr>
+                  <tr>
+                      <td></td>
+                      <td>&delta;<sub>ab</sub></td>
+                      <td>0.645</td>
+                      <td></td>
+                      <td>0.692</td>
+                      <td>0.816</td>
+                      <td></td>
+                      <td>0.590</td>
+                  </tr>
+                  <tr>
+                      <td>b</td>
+                      <td></td>
+                      <td></td>
+                      <td>3.141</td>
+                      <td></td>
+                      <td></td>
+                      <td>3.071</td>
+                      <td></td>
+                  </tr>
+                  <tr>
+                      <td></td>
+                      <td>&delta;<sub>bc</sub></td>
+                      <td>0.634</td>
+                      <td></td>
+                      <td>0.411</td>
+                      <td>0.574</td>
+                      <td></td>
+                      <td>0.402</td>
+                  </tr>
+                  <tr>
+                      <td>c</td>
+                      <td></td>
+                      <td></td>
+                      <td>2.868</td>
+                      <td></td>
+                      <td></td>
+                      <td>2.899</td>
+                      <td></td>
+                  </tr>
+              </table>
+          </div>
+          <div class="tableObservations" id="tableObservation">
+              <button type="button" onclick="closeobservation2()">Close</button>
+          </div>
+      </div>
+        <div class="observation" id="IBobservation">
+          <div class="tablediv" id="IBtablediv">
+              <table class="observationTable" id="IBobservationTable">
+                  <tr>
+                      <th>Current (A)</th>
+                      <th>Magnetic Field (KGauss)</th>
+                  </tr>
+              </table>
+          </div>
+          <div class="tableObservation" id="IBtableObservation">
+              <button type="button" onclick="closeobservation()">Close</button>
+              <button type="button" onclick="clearing()" style="width: 70px;">Clear All</button>
+              <button type="button" onclick="IBgraph()" style="width: 100px;">GRAPH</button>
+          </div>
+      </div>
+        
+        <div class="electromagnet" id="electromagnet" title="Electromagnet"></div>
+            <div class="ammeter" id="ammeter" title="Ammeter"></div>
+            <div class="digitalgaussmeter" id="digitalgaussmeter" title="Digital Gauss Meter">
+            </div>
+            <div class="hallsensor" id="hallsensor" title="Hall Sensor"></div>
+            <div id="hprobe" class="hprobe" title="Hall Probe"></div>
+            <div id="powersupply" class="powersupply" title="Constant Power Supply"></div>
+        
+            </div>
+            <div class="electromagnet" id="electromagnet" title="Electromagnet" ></div>
+            <div class="constpwrsuply" id="constpwrsuply" title="constant current supply" ></div>
+            <div class="digitalgaussmeter" id="digitalgaussmeter" title="Digital Gauss Meter" ></div>
+            <div id="mtube" class="mtube" title="Mercury discharge tube" ></div>
+            <div id="screen" class="screen" title="TV monitor" ></div>
+            <div id="zstand" class="zstand" title="Optical rail" ></div>
+            <div id="flense" class="flense" title="Polarizer" ></div>
+            <div id="fpetalon" class="fpetalon" title="Fabry perot etalon" ></div>
+            <div id="tscope" class="tscope" title="Telescope with focusing lens" ></div>
+            <div id="ccdcmra" class="ccdcmra" title="CCD Camera" ></div>
+            <div class="elemgnet" id="elemgnet" title="Electromagnet" ></div>
+            <div id="zpwrsply" class="zpwrsply" title="Zeeman power supply" ></div>
+            <div id="powersupply" class="powersupply" title="Constant current Supply" ></div>
+          </div>
+          <div id="variables" class="main__task-div">
+            <div class="settings-sections">
+              <h3 class="task-title">Controls</h3>
+              <div class="blocker" onclick="closeobservation()" id="blocker"></div>
+              <div class="simoptions" id="simoptions" >
+               <div id="grid1">
+                <div class="insert-reset-observation">
+                    <button id="insert" type="button" onclick="insert()" disabled>Insert Probe</button>
+                    <button id="remove" type="button" onclick="remove()" style="display:none;font-size: 12px;">Remove
+                        Probe</button>
+                </div>
+                
+                <div class="current" id = "current" >
+                  <p>Current: <span id="currentvalue"></span> A</p>
+                  <input type="range" min="1" max="4" value="1" step="0.5" class="slider" id="cslider" disabled>
+              </div>
+              <div id="leastcount" style="display: none; font-size: 16px; margin: 12px;">Least Count = 0.01mm</div>
+              <div id="addbtn" class="insert-reset-observation" style="display: none; ">
+                <button id="addbutton" type="button" onclick="AddingToArray()" disabled>Add to Table</button>
+            </div>
+
+            <div id="magfield" class="insert-reset-observation" style="display: none; ">
+              <button id="magneticfield" type="button" disabled>Magnetic Field</button>
+          </div>
+          <div id="mmrdng" class="insert-reset-observation" style="display: none;">
+            <button id="mmreading" type="button" disabled>Take Reading</button>
+        </div>
+                <!-- <div class="insert-reset-observation">
+                    <button id="addbutton" type="button" onclick="AddingToArray()" disabled>Add to Table</button>
+                </div> -->
+                <div class="insert-reset-observation">
+                  <button id="observationbutton" type="button" onclick="openobservation()"
+                      disabled>Observations</button>
+              </div>
+            
+                <div class="insert-reset-observation">
+                  <button id="finalresult" type="button" onclick="hallcovalue()" disabled>Show Result</button>
+              </div>
+                
+          
+               <!-- </div>  -->
+            </div>
+            
+          </div>
+            </div>
+            <button
+            class="btn btn-top hide"
+            title="Move to Top"
+            onclick="movetoTop()"
+            ontouchstart="movetoTop"
+          >
+            ↑
+          </button>
+          <!-- <button id="buttonup" onclick="up()"><img class="nextimg" src="images/bluebkdulls.svg" alt="arrow"></button> -->
+          <!-- <button id="buttondown" onclick="down()"><img class="nextimg" src="images/bluebkwdulls.svg" alt="arrow"></button> -->
+          </div>
+          
+           <div id="Results" class="main__task-div"style="display: none;">
+            <h3 class="task-title">Results</h3>
+            <div class="settings-sections">
+              <div class="result">
+                <br>
+                <label>Bohr Magneton : </label><br>
+                <span id="calculatedvalue" style="display: none; font-size: 15px;">&mu;<sub>b</sub>= 0.973 &times;10<sup>-23</sup> amp-m<sup>2</sup></span><br>
+                <label>Standard Value : </label><br>
+                <span id="originalvalue" style="display: none; font-size: 15px;">&mu;<sub>b</sub>= 0.927 &times;10<sup>-23</sup> amp-m<sup>2</sup></span><br>
+                <span id="error" style="display: none; font-size: 15px;">Error = 5%</span>
+            </div>
+            <button
+            class="btn btn-top hide"
+            title="Move to Top"
+            onclick="movetoTop()"
+            ontouchstart="movetoTop"
+          >
+            ↑
+          </button>
+          </div>
+          </div>
+          </div>
+         
+          <div class="main__task-div footer">
+            <p>Copyright © SOLVE The Virtual Lab @ NITK Surathkal</p>
+          </div>
+        </div>
+     
+    </div>
+    
+    <script defer src="js/script.js"></script>
+  <script src="../assets/js/iframeResize.js"></script>
+        
+        </body>
+</html>
