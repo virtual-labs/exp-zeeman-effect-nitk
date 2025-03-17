@@ -16,6 +16,10 @@ let mf = {
   3.5: "8.48KGuass",
   4: "9.95KGuass",
 };
+
+let images = [];
+const getImages = (el) => [...el.getElementsByTagName("img")];
+images = getImages(document);
 const taskTitle = document.querySelector(".task-title");
 const stepTitle = document.querySelector(".practice-step-info");
 const btnTop = document.querySelector(".btn-top");
@@ -85,12 +89,14 @@ function displayDiv(ele) {
         // Show only the variable section
         document.getElementById("Results").style.display = "none";
         document.getElementById("variables").style.display = "block";
+        images = document.getElementsByTagName("img");
         // Reset other elements based on this option
         slider_reset();
         remove();
       } else if (option === "Zeeman Effect") {
         taskTitle.textContent = "Zeeman Effect";
         // Show both the variable and result sections
+        images = document.getElementsByTagName("img");
         document.getElementById("Results").style.display = "block";
         document.getElementById("variables").style.display = "block";
         // Reset other elements based on this option
